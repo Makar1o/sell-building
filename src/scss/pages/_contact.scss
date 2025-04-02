@@ -1,0 +1,209 @@
+@use "../utils/variables" as *;
+@use "../buttons" as *;
+
+// Mixins
+@mixin card-effect {
+  transition: all 0.3s ease;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.contact-container {
+  max-width: 1200px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+
+  @media (min-width: 992px) {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.contact-info {
+  background: linear-gradient(
+    135deg,
+    $secondary-color 0%,
+    lighten($secondary-color, 5%) 100%
+  );
+  padding: 2.5rem;
+  border-radius: 24px;
+  @include card-effect;
+
+  p {
+    font-size: 16px;
+  }
+
+  h1 {
+    color: $primary-color;
+    margin-bottom: 2rem;
+    font-size: 2.2rem;
+    position: relative;
+    padding-bottom: 1rem;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 4px;
+      background: $primary-color;
+      border-radius: 2px;
+    }
+  }
+}
+
+.contact-details {
+  display: grid;
+  gap: 1.8rem;
+
+  .contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: rgba($white-color, 0.8);
+    border-radius: 12px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: $white-color;
+      transform: translateX(5px);
+    }
+
+    .contact-icon {
+      display: flex;
+      width: 48px;
+      height: 48px;
+      background: $primary-color;
+      border-radius: 50%;
+      color: $white-color;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+
+    .contact-content {
+      h3 {
+        color: $primary-color;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+      }
+
+      p,
+      a {
+        color: $accent-color;
+        margin: 0;
+        text-decoration: none;
+        transition: color 0.3s ease;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.contact-form {
+  background: $white-color;
+  padding: 2.5rem;
+  border-radius: 24px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  @include card-effect;
+
+  h2 {
+    color: $primary-color;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .form-group {
+    margin-bottom: 1.8rem;
+
+    label {
+      display: block;
+      margin-bottom: 0.8rem;
+      color: $accent-color;
+      font-weight: 700;
+      font-size: $font-size-lg;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      padding: 1rem;
+      border: 2px solid $secondary-color;
+      border-radius: 12px;
+      font-size: $font-size-lg;
+      transition: all 0.3s ease;
+
+      &:focus {
+        outline: none;
+        border-color: $primary-color;
+        box-shadow: 0 0 0 4px rgba($primary-color, 0.1);
+      }
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+  }
+
+  .btn-submit {
+    @extend .primary-btn;
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    font-size: 1.1rem;
+    border-radius: 12px;
+  }
+}
+
+.map-container {
+  grid-column: 1 / -1;
+  width: 100%;
+  max-width: 1224px;
+  margin: 3rem auto;
+
+  h2 {
+    padding: 0;
+    font-size: 40px;
+    font-weight: 700;
+    color: $primary-color;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  .map-wrapper {
+    width: 100%;
+    height: 500px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    gap: 2rem;
+  }
+
+  .contact-info,
+  .contact-form {
+    padding: 1.8rem;
+  }
+
+  .map-wrapper {
+    height: 400px;
+  }
+}
