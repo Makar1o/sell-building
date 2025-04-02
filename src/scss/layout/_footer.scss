@@ -1,0 +1,124 @@
+@use "../utils/variables" as *;
+
+.footer-container {
+  margin-top: 60px;
+  background-color: $primary-color;
+  color: $white-color;
+  padding: 40px 0;
+  width: 100%;
+  font-family: "Nunito", sans-serif;
+}
+
+.footer-inner {
+  width: 100%;
+  max-width: 1224px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footer-columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 250px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-column h4 {
+  font-size: 20px;
+  margin-bottom: -16px;
+  padding-bottom: 8px;
+  position: relative;
+}
+
+.footer-column h4::before {
+  content: "";
+  position: absolute;
+  top: -24px;
+  left: 0;
+  width: 200px;
+  height: 1px;
+  background-color: #1b4a60;
+}
+
+.footer-column .footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.footer-column .footer-links a {
+  display: block;
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: $white-color;
+  text-decoration: none;
+}
+
+.footer-column .footer-links a:hover {
+  text-decoration: underline;
+}
+
+.footer-logo-img {
+  width: 258px;
+  height: 80px;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.icon-x,
+.icon-in {
+  font-weight: bold;
+  font-size: 18px;
+  cursor: pointer;
+  color: $white-color;
+}
+
+.footer-bottom {
+  width: 100%;
+  max-width: 1224px;
+  margin: 40px auto 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  padding-top: 20px;
+  border-top: 1px solid #1b4a60;
+}
+
+.footer-bottom .footer-links a {
+  margin-left: 16px;
+  font-size: 12px;
+  color: $white-color;
+}
+
+.footer-bottom .footer-left,
+.footer-bottom .footer-right {
+  display: flex;
+  align-items: center;
+}
+
+.footer-bottom .footer-right {
+  justify-content: flex-end;
+}
+
+.footer-bottom .footer-right a {
+  margin-left: 16px;
+}
+
+.copy-right {
+  font-size: 12px;
+  color: $white-color;
+}

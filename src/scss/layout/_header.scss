@@ -1,0 +1,53 @@
+@use "../utils/variables" as *;
+@use "../buttons" as *;
+
+.header {
+  height: 80px;
+  width: 100%;
+  background-color: $white-color;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between; /* Між елементами буде рівномірний відступ */
+  align-items: center; /* Центруємо елементи по вертикалі */
+  width: 100%; /* Нехай елементи займають всю ширину */
+  max-width: 1440px; /* Максимальна ширина контенту */
+}
+
+.header-container {
+  display: flex;
+  align-items: center; /* Центруємо логотип по вертикалі */
+}
+
+.nav-list {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  font-family: Nunito, serif;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.nav-item {
+  color: $primary-color;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+}
+
+@media (max-width: 1440px) {
+  .header-content {
+    padding: 0 16px; /* Зменшуємо відступи для менших екранів */
+  }
+}

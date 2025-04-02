@@ -1,0 +1,303 @@
+@use "../utils/variables" as *;
+
+.hero-section-img {
+  width: 100%;
+  max-width: 1720px;
+  height: 720px;
+  background-image: url("/src/images/hero-section.png");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  margin: 0 auto;
+  display: block;
+}
+
+.hero-section-items {
+  position: absolute;
+  top: 264px;
+  left: 36px;
+  max-width: 1440px;
+}
+
+.hero-section-topic {
+  font-size: 48px;
+  font-weight: 700;
+  max-width: 520px;
+  color: $primary-color;
+}
+
+.under-topic {
+  font-size: 24px;
+  font-weight: 500;
+  max-width: 550px;
+  color: $primary-color;
+}
+
+.about-container {
+  padding-top: 60px;
+  max-width: 1440px;
+  width: 100%;
+  padding: 60px 0 0 0;
+  margin: 0 auto;
+}
+
+.about-under-topic {
+  max-width: 600px;
+}
+
+.topic-about {
+  display: flex;
+  justify-content: center;
+}
+
+.about-p {
+  max-width: 565px;
+}
+
+.about-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+.about-floors {
+  position: relative;
+  top: 15px;
+  right: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.benefits-building {
+  display: flex;
+}
+
+.benefit-cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.benefit-card {
+  min-width: 300px;
+  height: 340px;
+  background-color: $secondary-color;
+  color: $primary-color;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Hover effect for scaling and shadow */
+}
+
+.benefit-card:hover {
+  transform: scale(1.05); /* Slight scale on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow for hover effect */
+}
+
+.benefit-card-text {
+  font-family: Lora, serif;
+  font-weight: 400;
+  font-size: 16px;
+  width: 244px;
+}
+
+.benefit-card-topic {
+  font-size: 20px;
+  font-weight: 600;
+  padding-bottom: 24px;
+  width: 230px;
+}
+
+.card-icon {
+  padding: 36px;
+}
+
+.graph {
+  position: relative;
+  top: 8px;
+  left: 10px;
+  padding-bottom: 56px;
+}
+
+.benefit-card-text,
+.benefit-card-topic {
+  margin: 0;
+  padding-left: 36px;
+}
+
+.our-benefits {
+  max-width: 1440px;
+  width: 100%;
+  padding: 60px 0 20px 0;
+  margin: 0 auto;
+}
+
+.card-number {
+  position: absolute;
+  right: 20px;
+  display: flex;
+  font-size: 15px;
+  font-weight: 500;
+  justify-content: flex-end;
+}
+
+.categories-container {
+  padding-top: 120px;
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+  overflow: hidden; /* Prevent images from overflowing when scaling */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth scaling and shadow transition */
+}
+
+.image-wrapper:hover {
+  transform: scale(1.05); /* Slight scale on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Optional shadow for hover effect */
+}
+
+.categories-image {
+  width: 100%;
+  height: auto;
+}
+
+.categories-status-left,
+.categories-status-right {
+  position: absolute;
+  bottom: 0;
+  background: rgba(1, 42, 65, 0.69);
+  color: $white-color;
+  padding: 5px 45px;
+  font-family: Nunito, sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.categories-status-left {
+  left: 0;
+  border-radius: 0 8px 0 0;
+}
+
+.categories-status-right {
+  right: 0;
+  border-radius: 8px 0 0 0;
+}
+
+.categories-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 1440px;
+  gap: 24px;
+  margin: 14px 0 32px 0;
+}
+
+.types-button {
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.categories-topic {
+  max-width: 1440px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+
+.stats-container {
+  padding-top: 60px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .towers-stats {
+    max-width: 100%;
+    height: auto;
+    position: relative;
+    top: 70px;
+  }
+
+  .stats-topic {
+    font-size: 64px;
+    font-weight: 500;
+    color: $primary-color;
+    margin-top: 24px;
+    position: absolute;
+  }
+
+  .stats-content {
+    display: flex;
+    gap: 48px;
+    margin-top: 100px;
+    align-items: center;
+
+    .stat-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      h3 {
+        font-size: 28px;
+        font-weight: 700;
+        margin: 0;
+      }
+
+      p {
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 8px;
+      }
+    }
+
+    hr {
+      height: 48px;
+      width: 1px;
+      background-color: #ccc;
+      border: none;
+    }
+  }
+
+  .bigger-primary-btn {
+    padding: 14px 36px;
+    font-size: 18px;
+  }
+}
+
+.stats-num {
+  margin-bottom: 0;
+}
+
+.cta-container {
+  margin-top: 120px;
+  display: flex;
+  justify-content: center;
+}
+
+.cta-image {
+  background-image: url("/src/images/СTA-section.png");
+  background-size: cover;
+  background-position: center;
+  width: 1345px;
+  height: 545px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 0 80px;
+  border-radius: 16px;
+}
+
+.cta-text {
+  width: 532px;
+}
+
+.cta-topic {
+  font-size: 48px;
+  font-weight: 700;
+  width: 559px;
+  margin-bottom: 20px;
+}
