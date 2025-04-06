@@ -1,11 +1,5 @@
 @charset "UTF-8";
-
-button {
-  font-family: Nunito, sans-serif;
-  font-style: normal;
-}
-
-.button-common, .primary-btn, .contact-form .btn-submit, .filters-sidebar .btn-apply-filters, .property-card .property-details .property-actions .btn-details, .secondary-btn, .filters-sidebar .btn-reset, .btn-load-more {
+.bigger-secondary-btn, .bigger-primary-btn, .primary-btn, .contact-form .btn-submit, .filters-sidebar .btn-apply-filters, .property-card .property-details .property-actions .btn-details, .secondary-btn, .filters-sidebar .btn-reset, .btn-load-more, button {
   border-radius: 16px;
   display: flex;
   align-items: center;
@@ -14,6 +8,9 @@ button {
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
+  font-family: Nunito, sans-serif;
+  font-style: normal;
+  transition: all 0.3s ease;
 }
 
 .secondary-btn, .filters-sidebar .btn-reset, .btn-load-more {
@@ -21,26 +18,22 @@ button {
   padding: 14px 24px;
   background-color: #fff;
   color: #012a41;
-  transition: all 0.3s ease;
 }
-
 .secondary-btn:hover, .filters-sidebar .btn-reset:hover, .btn-load-more:hover {
   background-color: #012a41;
   color: #fff;
-  box-shadow: 0 4px 8px rgb(0 0 0 / 20%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   transform: scale(1.05);
 }
 
 .primary-btn, .contact-form .btn-submit, .filters-sidebar .btn-apply-filters, .property-card .property-details .property-actions .btn-details {
-  padding: 14px 28px;
+  padding: 16px 28px;
   background: #012a41;
   color: #fff;
   border: 0;
-  transition: all 0.3s ease;
 }
-
 .primary-btn:hover, .contact-form .btn-submit:hover, .filters-sidebar .btn-apply-filters:hover, .property-card .property-details .property-actions .btn-details:hover {
-  background: rgb(0.2272727273 9.5454545455 14.7727272727);
+  background: rgb(0.2272727273, 9.5454545455, 14.7727272727);
   transform: scale(1.05);
   box-shadow: 0 4px 8px #06061c;
 }
@@ -51,6 +44,8 @@ button {
   font-weight: 600;
   border: 0;
   margin-top: 8px;
+  background: #012a41;
+  color: #fff;
 }
 
 .bigger-secondary-btn {
@@ -58,6 +53,9 @@ button {
   font-size: 20px;
   font-weight: 600;
   margin-top: 8px;
+  border: 2px solid #012a41;
+  background-color: #fff;
+  color: #012a41;
 }
 
 .header {
@@ -70,11 +68,8 @@ button {
   position: fixed;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 10px rgb(0 0 0 / 10%);
-
-  /* Виправляємо проблему з шириною на малих екранах */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
-
 @media (width <= 480px) {
   .header {
     padding: 0 10px;
@@ -88,39 +83,34 @@ button {
   width: 100%;
   max-width: 1440px;
   padding: 0 36px;
-  box-sizing: border-box; /* Важливо для правильного розрахунку ширини */
+  box-sizing: border-box;
 }
-
 @media (width <= 1024px) {
   .header-content {
     padding: 0 24px;
   }
 }
-
 @media (width <= 768px) {
   .header-content {
     padding: 0 16px;
   }
 }
 
-/* Герой-секція - виправляємо проблеми з прокруткою */
 .hero-section-img {
   width: 100%;
   height: 500px;
   background-image: url("/src/images/hero-section.png");
   background-size: cover;
   background-position: center;
-  margin: 80px auto 0; /* Враховуємо висоту хедера */
+  margin: 80px auto 0;
   display: block;
   box-sizing: border-box;
 }
-
 @media (width >= 768px) {
   .hero-section-img {
     height: 600px;
   }
 }
-
 @media (width >= 1024px) {
   .hero-section-img {
     height: 720px;
@@ -138,7 +128,6 @@ button {
   margin: 0;
   padding: 0;
 }
-
 @media (width <= 1024px) {
   .nav-list {
     display: none;
@@ -149,23 +138,20 @@ button {
   color: #012a41;
   transition: color 0.3s ease;
 }
-
 .nav-item:hover {
-  color: rgb(0.2272727273 9.5454545455 14.7727272727);
+  color: rgb(0.2272727273, 9.5454545455, 14.7727272727);
 }
 
 .cta-buttons {
   display: flex;
   gap: 16px;
 }
-
 @media (width <= 1024px) {
   .cta-buttons {
     gap: 12px;
     display: none;
   }
 }
-
 @media (width <= 480px) {
   .cta-buttons .primary-btn {
     display: none;
@@ -179,7 +165,6 @@ button {
   cursor: pointer;
   padding: 8px;
 }
-
 @media (width <= 1024px) {
   .mobile-menu-btn {
     display: block;
@@ -189,7 +174,6 @@ button {
 .active {
   position: relative;
 }
-
 .active::after {
   content: "";
   position: absolute;
@@ -208,13 +192,11 @@ button {
   padding: 10px;
   z-index: 1001;
 }
-
 @media (width <= 1024px) {
   .burger-btn {
     display: block;
   }
 }
-
 .burger-btn .burger-line {
   display: block;
   width: 25px;
@@ -223,15 +205,12 @@ button {
   margin: 5px 0;
   transition: all 0.3s ease;
 }
-
 .burger-btn.active .burger-line:nth-child(1) {
   transform: translateY(8px) rotate(45deg);
 }
-
 .burger-btn.active .burger-line:nth-child(2) {
   opacity: 0;
 }
-
 .burger-btn.active .burger-line:nth-child(3) {
   transform: translateY(-8px) rotate(-45deg);
 }
@@ -244,7 +223,7 @@ button {
   max-width: 300px;
   height: 100vh;
   background-color: #fff;
-  box-shadow: -2px 0 10px rgb(0 0 0 / 10%);
+  box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   z-index: 1000;
   transition: right 0.3s ease;
   padding: 20px;
@@ -253,11 +232,9 @@ button {
   flex-direction: column;
   gap: 20px;
 }
-
 .mobile-menu.active {
   right: 0;
 }
-
 .mobile-menu .close-btn {
   align-self: flex-end;
   background: none;
@@ -268,14 +245,12 @@ button {
   padding: 10px;
   margin: -10px -10px 0 0;
 }
-
 .mobile-menu .nav-list {
   flex-direction: column;
   display: flex !important;
   gap: 15px;
   margin-top: 20px;
 }
-
 .mobile-menu .cta-buttons {
   display: flex !important;
   flex-direction: column;
@@ -283,7 +258,6 @@ button {
   margin-top: auto;
   padding-bottom: 20px;
 }
-
 .mobile-menu .cta-buttons .primary-btn {
   display: block !important;
 }
@@ -294,13 +268,12 @@ button {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(0 0 0 / 50%);
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.3s ease, visibility 0.3s ease;
 }
-
 .menu-overlay.active {
   opacity: 1;
   visibility: visible;
@@ -314,14 +287,12 @@ button {
   width: 100%;
   font-family: Nunito, sans-serif;
 }
-
 @media (width >= 768px) {
   .footer-container {
     margin-top: 60px;
     padding: 40px 36px;
   }
 }
-
 @media (width >= 1024px) {
   .footer-container {
     padding: 40px 0;
@@ -336,7 +307,6 @@ button {
   flex-direction: column;
   gap: 30px;
 }
-
 @media (width >= 768px) {
   .footer-inner {
     gap: 40px;
@@ -348,7 +318,6 @@ button {
   flex-direction: column;
   gap: 30px;
 }
-
 @media (width >= 768px) {
   .footer-columns {
     flex-flow: row wrap;
@@ -356,7 +325,6 @@ button {
     gap: 20px;
   }
 }
-
 @media (width >= 1024px) {
   .footer-columns {
     gap: 40px;
@@ -371,13 +339,11 @@ button {
   flex-direction: column;
   gap: 10px;
 }
-
 @media (width >= 768px) {
   .footer-column {
     flex: 1 1 calc(50% - 20px);
   }
 }
-
 @media (width >= 1024px) {
   .footer-column {
     flex: 1;
@@ -391,14 +357,12 @@ button {
   padding-bottom: 8px;
   position: relative;
 }
-
 @media (width >= 768px) {
   .footer-column h4 {
     font-size: 20px;
     margin-bottom: -16px;
   }
 }
-
 .footer-column h4::before {
   content: "";
   position: absolute;
@@ -408,7 +372,6 @@ button {
   height: 1px;
   background-color: #1b4a60;
 }
-
 @media (width >= 768px) {
   .footer-column h4::before {
     top: -24px;
@@ -421,7 +384,6 @@ button {
   padding: 0;
   margin: 8px 0;
 }
-
 @media (width >= 768px) {
   .footer-column .footer-links {
     margin: 10px 0;
@@ -436,14 +398,12 @@ button {
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
-
 @media (width >= 768px) {
   .footer-column .footer-links a {
     margin-bottom: 12px;
     font-size: 15px;
   }
 }
-
 .footer-column .footer-links a:hover {
   opacity: 0.8;
   text-decoration: underline;
@@ -454,7 +414,6 @@ button {
   height: auto;
   max-height: 62px;
 }
-
 @media (width >= 768px) {
   .footer-logo-img {
     width: 258px;
@@ -467,7 +426,6 @@ button {
   gap: 8px;
   margin-top: 8px;
 }
-
 @media (width >= 768px) {
   .footer-icons {
     gap: 10px;
@@ -483,14 +441,12 @@ button {
   color: #fff;
   transition: opacity 0.2s ease;
 }
-
 @media (width >= 768px) {
   .icon-x,
   .icon-in {
     font-size: 18px;
   }
 }
-
 .icon-x:hover,
 .icon-in:hover {
   opacity: 0.8;
@@ -510,7 +466,6 @@ button {
   border-top: 1px solid #1b4a60;
   text-align: center;
 }
-
 @media (width >= 768px) {
   .footer-bottom {
     flex-direction: row;
@@ -527,7 +482,6 @@ button {
   justify-content: center;
   gap: 8px;
 }
-
 @media (width >= 768px) {
   .footer-bottom .footer-links {
     justify-content: flex-start;
@@ -542,14 +496,12 @@ button {
   text-decoration: none;
   transition: opacity 0.2s ease;
 }
-
 @media (width >= 768px) {
   .footer-bottom .footer-links a {
     margin-left: 16px;
     font-size: 12px;
   }
 }
-
 .footer-bottom .footer-links a:hover {
   opacity: 0.8;
   text-decoration: underline;
@@ -562,7 +514,6 @@ button {
   flex-wrap: wrap;
   justify-content: center;
 }
-
 @media (width >= 768px) {
   .footer-bottom .footer-left,
   .footer-bottom .footer-right {
@@ -582,7 +533,6 @@ button {
   width: 100%;
   text-align: center;
 }
-
 @media (width >= 768px) {
   .copy-right {
     font-size: 12px;
@@ -601,19 +551,13 @@ button {
   position: relative;
   margin: 0 auto;
   display: block;
-
-  /* Планшетна версія (768px і більше) */
-
-  /* Десктопна версія (1440px і більше) */
 }
-
 @media (width >= 768px) {
   .hero-section-img {
     height: 600px;
     background-image: url("/src/images/hero-section-responsive-1.png");
   }
 }
-
 @media (width >= 1440px) {
   .hero-section-img {
     height: 720px;
@@ -627,12 +571,7 @@ button {
   left: 20px;
   transform: translateY(-50%);
   width: calc(100% - 40px);
-
-  /* Планшетна версія (768px) */
-
-  /* Десктопна версія (1440px) */
 }
-
 @media (width >= 768px) {
   .hero-section-items {
     top: 50%;
@@ -641,7 +580,6 @@ button {
     max-width: 600px;
   }
 }
-
 @media (width >= 1440px) {
   .hero-section-items {
     top: 264px;
@@ -652,25 +590,19 @@ button {
 }
 
 .hero-section-topic {
-  font-size: 28px; /* Мобільний (375px) */
+  font-size: 28px;
   font-weight: 700;
   line-height: 1.2;
   color: #012a41;
   width: 100%;
   margin-bottom: 16px;
-
-  /* Планшет (768px) */
-
-  /* Десктоп (1440px) */
 }
-
 @media (width >= 768px) {
   .hero-section-topic {
     font-size: 36px;
     max-width: 500px;
   }
 }
-
 @media (width >= 1440px) {
   .hero-section-topic {
     font-size: 48px;
@@ -679,24 +611,18 @@ button {
 }
 
 .under-topic {
-  font-size: 16px; /* Мобільний (375px) */
+  font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
   color: #012a41;
   width: 100%;
-
-  /* Планшет (768px) */
-
-  /* Десктоп (1440px) */
 }
-
 @media (width >= 768px) {
   .under-topic {
     font-size: 18px;
     max-width: 460px;
   }
 }
-
 @media (width >= 1440px) {
   .under-topic {
     font-size: 22px;
@@ -712,19 +638,16 @@ button {
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 @media (width >= 768px) {
   .about-container {
     padding: 40px 25px 0;
   }
 }
-
 @media (width >= 1024px) {
   .about-container {
     padding: 50px 40px 0;
   }
 }
-
 @media (width >= 1440px) {
   .about-container {
     padding: 60px 60px 0;
@@ -739,20 +662,17 @@ button {
   line-height: 1.2;
   margin-bottom: 0;
 }
-
 @media (width >= 768px) {
   .topic-about {
     font-size: 32px;
     margin-bottom: 25px;
   }
 }
-
 @media (width >= 1024px) {
   .topic-about {
     font-size: 36px;
   }
 }
-
 @media (width >= 1440px) {
   .topic-about {
     font-size: 40px;
@@ -766,14 +686,12 @@ button {
   gap: 25px;
   margin-top: 20px;
 }
-
 @media (width >= 768px) {
   .about-content {
     gap: 30px;
     margin-top: 25px;
   }
 }
-
 @media (width >= 1024px) {
   .about-content {
     flex-direction: row;
@@ -786,7 +704,6 @@ button {
 .about-text {
   width: 100%;
 }
-
 @media (width >= 1024px) {
   .about-text {
     flex: 1;
@@ -794,7 +711,6 @@ button {
     padding-right: 15px;
   }
 }
-
 @media (width >= 1440px) {
   .about-text {
     padding-right: 20px;
@@ -807,7 +723,6 @@ button {
   max-width: 100%;
   margin-bottom: 15px;
 }
-
 @media (width >= 768px) {
   .about-p {
     font-size: 16px;
@@ -815,13 +730,11 @@ button {
     margin-bottom: 18px;
   }
 }
-
 @media (width >= 1024px) {
   .about-p {
     font-size: 17px;
   }
 }
-
 @media (width >= 1440px) {
   .about-p {
     font-size: 18px;
@@ -836,7 +749,6 @@ button {
   margin-bottom: 15px;
   margin-top: 0;
 }
-
 @media (width >= 768px) {
   .about-under-topic {
     font-size: 20px;
@@ -844,13 +756,11 @@ button {
     margin-bottom: 18px;
   }
 }
-
 @media (width >= 1024px) {
   .about-under-topic {
     font-size: 22px;
   }
 }
-
 @media (width >= 1440px) {
   .about-under-topic {
     font-size: 24px;
@@ -861,7 +771,6 @@ button {
 .benefits-building {
   width: 100%;
 }
-
 @media (width >= 1024px) {
   .benefits-building {
     flex: 1;
@@ -869,7 +778,6 @@ button {
     padding-left: 15px;
   }
 }
-
 @media (width >= 1440px) {
   .benefits-building {
     padding-left: 20px;
@@ -883,7 +791,7 @@ button {
   height: 500px;
   overflow: hidden;
   border-radius: 12px;
-  box-shadow: 0 8px 24px rgb(0 0 0 / 10%);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .carousel-image {
@@ -905,7 +813,7 @@ button {
   transform: translateY(-50%);
   width: 50px;
   height: 50px;
-  background: rgb(255 255 255 / 70%);
+  background: rgba(255, 255, 255, 0.7);
   border: none;
   border-radius: 50%;
   font-size: 24px;
@@ -913,15 +821,12 @@ button {
   z-index: 10;
   transition: all 0.3s ease;
 }
-
 .carousel-arrow:hover {
   background: white;
 }
-
 .carousel-arrow.prev {
   left: 20px;
 }
-
 .carousel-arrow.next {
   right: 20px;
 }
@@ -935,32 +840,27 @@ button {
   gap: 10px;
   z-index: 10;
 }
-
 .carousel-dots .dot {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: rgb(255 255 255 / 50%);
+  background: rgba(255, 255, 255, 0.5);
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .carousel-dots .dot.active {
   background: white;
   transform: scale(1.2);
 }
 
-/* Image carousel responsive */
 .image-carousel {
   height: 300px;
 }
-
 @media (width >= 768px) {
   .image-carousel {
     height: 400px;
   }
 }
-
 @media (width >= 1024px) {
   .image-carousel {
     height: 500px;
@@ -972,7 +872,6 @@ button {
   height: 40px;
   font-size: 20px;
 }
-
 @media (width >= 768px) {
   .carousel-arrow {
     width: 50px;
@@ -982,8 +881,6 @@ button {
 }
 
 /* ==================== BENEFITS SECTION ==================== */
-
-/* ==================== BENEFITS SECTION ==================== */
 .our-benefits {
   max-width: 1440px;
   width: 100%;
@@ -991,13 +888,11 @@ button {
   margin: 0 auto;
   box-sizing: border-box;
 }
-
 @media (width >= 768px) {
   .our-benefits {
     padding: 60px 36px 20px;
   }
 }
-
 @media (width >= 1440px) {
   .our-benefits {
     padding: 80px 80px 30px;
@@ -1015,7 +910,6 @@ button {
   gap: 20px;
   width: 100%;
 }
-
 @media (width >= 768px) {
   .benefit-cards {
     flex-flow: row wrap;
@@ -1023,13 +917,11 @@ button {
     gap: 20px;
   }
 }
-
 @media (width >= 1024px) {
   .benefit-cards {
     gap: 24px;
   }
 }
-
 @media (width >= 1440px) {
   .benefit-cards {
     justify-content: flex-start;
@@ -1045,19 +937,16 @@ button {
   position: relative;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 @media (width >= 768px) {
   .benefit-card {
     width: 300px;
   }
 }
-
 .benefit-card:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgb(0 0 0 / 10%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Фіксовані внутрішні відступи як у оригіналі */
 .card-icon {
   padding: 36px;
   padding-bottom: 16px;
@@ -1104,13 +993,11 @@ button {
   width: 100%;
   margin: 0 auto;
 }
-
 @media (width <= 1439px) {
   .categories-container {
     padding-top: 60px;
   }
 }
-
 @media (width <= 1439px) and (width >= 768px) {
   .categories-container {
     padding-top: 80px;
@@ -1124,16 +1011,14 @@ button {
   justify-content: center;
   font-size: 36px;
 }
-
 @media (width >= 768px) {
   .categories-topic {
-    font-size: 48px; /* Для планшетів */
+    font-size: 48px;
   }
 }
-
 @media (width >= 1440px) {
   .categories-topic {
-    font-size: 64px; /* Оригінальний розмір для десктопів */
+    font-size: 64px;
   }
 }
 
@@ -1145,7 +1030,6 @@ button {
   gap: 24px;
   margin: 14px 0 32px;
 }
-
 @media (width <= 1439px) {
   .categories-grid {
     display: grid;
@@ -1154,7 +1038,6 @@ button {
     margin: 14px 20px 32px;
   }
 }
-
 @media (width <= 1439px) and (width >= 768px) {
   .categories-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -1162,7 +1045,6 @@ button {
     margin: 14px 36px 32px;
   }
 }
-
 @media (width <= 1439px) and (width >= 1024px) {
   .categories-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -1175,14 +1057,12 @@ button {
   display: inline-block;
   overflow: hidden;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border-radius: 12px; /* Додано заокруглення кутів */
+  border-radius: 12px;
 }
-
 .image-wrapper:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgb(0 0 0 / 15%);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
-
 @media (width <= 1439px) {
   .image-wrapper {
     display: block;
@@ -1195,7 +1075,6 @@ button {
   width: 100%;
   height: auto;
 }
-
 @media (width <= 1439px) {
   .categories-image {
     height: 100%;
@@ -1207,7 +1086,7 @@ button {
 .categories-status-right {
   position: absolute;
   bottom: 0;
-  background: rgb(1 42 65 / 69%);
+  background: rgba(1, 42, 65, 0.69);
   color: #fff;
   padding: 5px 45px;
   font-family: Nunito, sans-serif;
@@ -1215,7 +1094,6 @@ button {
   font-weight: 700;
   margin-bottom: 5px;
 }
-
 @media (width <= 1439px) {
   .categories-status-left,
   .categories-status-right {
@@ -1224,7 +1102,6 @@ button {
     margin-bottom: 0;
   }
 }
-
 @media (width <= 1439px) and (width >= 768px) {
   .categories-status-left,
   .categories-status-right {
@@ -1256,12 +1133,10 @@ button {
   align-items: center;
   position: relative;
 }
-
 .stats-container .towers-stats {
   max-width: 100%;
   height: auto;
 }
-
 .stats-container .stats-topic {
   font-size: 36px;
   font-weight: 500;
@@ -1269,19 +1144,16 @@ button {
   margin: 20px 0;
   width: 100%;
 }
-
 @media (width >= 768px) {
   .stats-container .stats-topic {
     font-size: 48px;
   }
 }
-
 @media (width >= 1024px) {
   .stats-container .stats-topic {
     font-size: 64px;
   }
 }
-
 .stats-container .stats-content {
   display: flex;
   flex-direction: column;
@@ -1290,38 +1162,32 @@ button {
   width: 100%;
   align-items: center;
 }
-
 .stats-container .stats-content .stat-block {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100%;
 }
-
 .stats-container .stats-content .stat-block h3 {
   font-size: 24px;
   font-weight: 700;
   margin: 0;
 }
-
 @media (width >= 768px) {
   .stats-container .stats-content .stat-block h3 {
     font-size: 28px;
   }
 }
-
 .stats-container .stats-content .stat-block p {
   font-size: 16px;
   font-weight: 500;
   margin-top: 4px;
 }
-
 @media (width >= 768px) {
   .stats-container .stats-content .stat-block p {
     font-size: 18px;
   }
 }
-
 .stats-container .stats-content hr {
   height: 1px;
   width: 80px;
@@ -1329,7 +1195,6 @@ button {
   border: none;
   margin: 8px 0;
 }
-
 @media (width >= 768px) {
   .stats-container .stats-content {
     flex-direction: row;
@@ -1337,26 +1202,22 @@ button {
     gap: 24px;
     margin-top: 60px;
   }
-
   .stats-container .stats-content hr {
     height: 48px;
     width: 1px;
     margin: 0;
   }
 }
-
 @media (width >= 1024px) {
   .stats-container .stats-content {
     gap: 32px;
   }
 }
-
 .stats-container .bigger-primary-btn {
   padding: 12px 28px;
   font-size: 16px;
   margin-top: 40px;
 }
-
 @media (width >= 768px) {
   .stats-container .bigger-primary-btn {
     padding: 14px 36px;
@@ -1364,11 +1225,9 @@ button {
   }
 }
 
-/* Додатковий відступ тільки для першого блоку */
 .first-stat {
   padding-top: 20px;
 }
-
 @media (width >= 768px) {
   .first-stat {
     padding-top: 0;
@@ -1382,13 +1241,11 @@ button {
   display: flex;
   justify-content: center;
 }
-
 @media (width >= 768px) {
   .cta-container {
     margin-top: 80px;
   }
 }
-
 @media (width >= 1024px) {
   .cta-container {
     margin-top: 100px;
@@ -1400,23 +1257,21 @@ button {
   background-size: cover;
   background-position: center;
   width: 100%;
-  height: 320px; /* зменшено висоту */
+  height: 320px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: flex-start; /* вирівнювання вліво на всіх екранах */
+  align-items: flex-start;
   padding: 0 25px;
   border-radius: 12px;
-  text-align: left; /* текст завжди зліва */
+  text-align: left;
 }
-
 @media (width >= 768px) {
   .cta-image {
     height: 400px;
     padding: 0 50px;
   }
 }
-
 @media (width >= 1024px) {
   .cta-image {
     height: 480px;
@@ -1428,14 +1283,12 @@ button {
 .cta-text {
   display: none;
 }
-
 @media (width >= 768px) {
   .cta-text {
     max-width: 400px;
     display: block;
   }
 }
-
 @media (width >= 1024px) {
   .cta-text {
     max-width: 480px;
@@ -1443,19 +1296,17 @@ button {
 }
 
 .cta-topic {
-  font-size: 26px; /* зменшено розмір */
+  font-size: 26px;
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 12px;
   width: 100%;
 }
-
 @media (width >= 768px) {
   .cta-topic {
     font-size: 32px;
   }
 }
-
 @media (width >= 1024px) {
   .cta-topic {
     font-size: 38px;
@@ -1477,7 +1328,6 @@ button {
   gap: 12px;
   flex-direction: column;
 }
-
 @media (width >= 400px) {
   .cta-buttons-ct {
     flex-direction: row;
@@ -1489,14 +1339,12 @@ button {
   font-size: 14px;
   white-space: nowrap;
 }
-
 @media (width >= 768px) {
   .cta-button {
     padding: 12px 24px;
     font-size: 15px;
   }
 }
-
 @media (width >= 1024px) {
   .cta-button {
     padding: 14px 28px;
@@ -1508,7 +1356,6 @@ button {
 .mobile-only {
   display: block;
 }
-
 @media (width >= 768px) {
   .mobile-only {
     display: none;
@@ -1518,7 +1365,6 @@ button {
 .desktop-only {
   display: none;
 }
-
 @media (width >= 768px) {
   .desktop-only {
     display: block;
@@ -1529,25 +1375,22 @@ button {
   font-size: 32px;
   font-weight: 700;
   color: #fff;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
 }
 
 .breadcrumbs {
   font-size: 14px;
-  color: rgb(255 255 255 / 80%);
-  font-family: Nunito-Bold, sans-serif;
+  color: rgba(255, 255, 255, 0.8);
+  font-family: "Nunito-Bold", sans-serif;
 }
-
 .breadcrumbs a {
   color: #fff;
   transition: all 0.3s ease;
 }
-
 .breadcrumbs a:hover {
   text-decoration: underline;
-  color: rgb(3.3181818182 139.3636363636 215.6818181818);
+  color: rgb(3.3181818182, 139.3636363636, 215.6818181818);
 }
-
 .breadcrumbs span {
   font-weight: 700;
 }
@@ -1565,44 +1408,38 @@ button {
   flex-shrink: 0;
   background-color: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   padding: 25px;
   height: fit-content;
   position: sticky;
   top: 120px;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
 }
-
 .filters-sidebar .filters-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
 }
-
 .filters-sidebar .filters-header h2 {
   font-size: 20px;
   color: #012a41;
   font-weight: 700;
 }
-
 .filters-sidebar .filter-group {
   margin-bottom: 25px;
 }
-
 .filters-sidebar .filter-title {
   font-size: 16px;
   margin-bottom: 12px;
   color: #012a41;
   font-weight: 700;
 }
-
 .filters-sidebar .filter-options {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .filters-sidebar .radio-option,
 .filters-sidebar .checkbox-option {
   display: flex;
@@ -1612,12 +1449,10 @@ button {
   font-size: 14px;
   color: #06061c;
 }
-
 .filters-sidebar .radio-option input,
 .filters-sidebar .checkbox-option input {
   display: none;
 }
-
 .filters-sidebar .radio-custom {
   width: 18px;
   height: 18px;
@@ -1627,7 +1462,6 @@ button {
   position: relative;
   transition: all 0.3s ease;
 }
-
 .filters-sidebar .radio-custom::after {
   content: "";
   width: 10px;
@@ -1640,15 +1474,12 @@ button {
   transform: translate(-50%, -50%) scale(0);
   transition: all 0.3s ease;
 }
-
-.filters-sidebar input[type="radio"]:checked + .radio-custom {
+.filters-sidebar input[type=radio]:checked + .radio-custom {
   border-color: #012a41;
 }
-
-.filters-sidebar input[type="radio"]:checked + .radio-custom::after {
+.filters-sidebar input[type=radio]:checked + .radio-custom::after {
   transform: translate(-50%, -50%) scale(1);
 }
-
 .filters-sidebar .checkbox-custom {
   width: 18px;
   height: 18px;
@@ -1658,7 +1489,6 @@ button {
   position: relative;
   transition: all 0.3s ease;
 }
-
 .filters-sidebar .checkbox-custom::after {
   content: "\f00c";
   font-family: "Font Awesome 6 Free";
@@ -1671,16 +1501,13 @@ button {
   transform: translate(-50%, -50%) scale(0);
   transition: all 0.3s ease;
 }
-
-.filters-sidebar input[type="checkbox"]:checked + .checkbox-custom {
+.filters-sidebar input[type=checkbox]:checked + .checkbox-custom {
   background-color: #012a41;
   border-color: #012a41;
 }
-
-.filters-sidebar input[type="checkbox"]:checked + .checkbox-custom::after {
+.filters-sidebar input[type=checkbox]:checked + .checkbox-custom::after {
   transform: translate(-50%, -50%) scale(1);
 }
-
 .filters-sidebar .filter-select,
 .filters-sidebar .filter-input {
   width: 100%;
@@ -1688,56 +1515,48 @@ button {
   border: 1px solid #f7f8fa;
   border-radius: 16px;
   font-size: 14px;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
   transition: all 0.3s ease;
 }
-
 .filters-sidebar .filter-select:focus,
 .filters-sidebar .filter-input:focus {
   outline: none;
   border-color: #012a41;
-  box-shadow: 0 0 0 2px rgb(1 42 65 / 20%);
+  box-shadow: 0 0 0 2px rgba(1, 42, 65, 0.2);
 }
-
 .filters-sidebar .range-inputs {
   display: flex;
   gap: 10px;
   margin-bottom: 15px;
 }
-
 .filters-sidebar .range-input {
   flex: 1;
   padding: 10px 12px;
   border: 1px solid #f7f8fa;
   border-radius: 16px;
   font-size: 14px;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
   min-width: 100px;
 }
-
 .filters-sidebar .range-input:focus {
   outline: none;
   border-color: #012a41;
 }
-
 .filters-sidebar .range-separator {
   color: #06061c;
   display: flex;
   align-items: center;
 }
-
 .filters-sidebar .checkbox-options {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
-
 .filters-sidebar .btn-apply-filters {
   width: 100%;
   padding: 14px;
   margin-top: 20px;
 }
-
 .filters-sidebar .btn-reset {
   padding: 8px 12px;
   border-width: 1px;
@@ -1748,39 +1567,33 @@ button {
 .property-listings {
   flex: 1;
 }
-
 .property-listings .listings-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 25px;
 }
-
 .property-listings .listings-header h2 {
   font-size: 24px;
   color: #012a41;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
   font-weight: 700;
 }
-
 .property-listings .listings-header .results-count {
   font-size: 14px;
   color: #06061c;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
 }
-
 .property-listings .listings-header .results-count span {
   font-weight: 700;
   color: #012a41;
 }
-
 .property-listings .properties-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 25px;
   margin-bottom: 40px;
 }
-
 .property-listings .load-more-container {
   text-align: center;
 }
@@ -1788,34 +1601,29 @@ button {
 .property-card {
   background-color: #fff;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   transition: all 0.3s ease;
 }
-
 .property-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgb(0 0 0 / 10%);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
-
 .property-card .property-image {
   width: 100%;
   height: 200px;
   object-fit: cover;
 }
-
 .property-card .property-details {
   padding: 20px;
 }
-
 .property-card .property-details .property-title {
   font-size: 18px;
   font-weight: 700;
   margin-bottom: 8px;
   color: #012a41;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
 }
-
 .property-card .property-details .property-location {
   display: flex;
   align-items: center;
@@ -1823,51 +1631,43 @@ button {
   font-size: 14px;
   color: #06061c;
   margin-bottom: 12px;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
 }
-
 .property-card .property-details .property-location i {
   font-size: 12px;
 }
-
 .property-card .property-details .property-features {
   display: flex;
   gap: 15px;
   margin-bottom: 15px;
 }
-
 .property-card .property-details .property-features .feature {
   display: flex;
   align-items: center;
   gap: 5px;
   font-size: 13px;
   color: #06061c;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
 }
-
 .property-card .property-details .property-features .feature i {
   color: #012a41;
 }
-
 .property-card .property-details .property-price {
   font-size: 20px;
   font-weight: 700;
   color: #012a41;
   margin-bottom: 15px;
-  font-family: Nunito-Bold, sans-serif;
+  font-family: "Nunito-Bold", sans-serif;
 }
-
 .property-card .property-details .property-actions {
   display: flex;
   gap: 10px;
 }
-
 .property-card .property-details .property-actions .btn-details {
   flex: 1;
   padding: 10px;
   font-size: 14px;
 }
-
 .property-card .property-details .property-actions .btn-favorite {
   width: 40px;
   height: 40px;
@@ -1880,10 +1680,9 @@ button {
   transition: all 0.3s ease;
   border: none;
 }
-
 .property-card .property-details .property-actions .btn-favorite:hover {
   color: #ff4757;
-  background-color: rgb(255 71 87 / 10%);
+  background-color: rgba(255, 71, 87, 0.1);
 }
 
 .btn-load-more {
@@ -1891,11 +1690,9 @@ button {
   display: inline-flex;
   margin: 0 auto;
 }
-
 .btn-load-more i {
   transition: all 0.3s ease;
 }
-
 .btn-load-more:hover i {
   transform: translateY(2px);
 }
@@ -1905,7 +1702,6 @@ button {
     flex-direction: column;
     padding: 30px 15px 50px;
   }
-
   .filters-sidebar {
     width: 100%;
     position: static;
@@ -1913,53 +1709,42 @@ button {
     padding: 20px;
   }
 }
-
 @media (width <= 768px) {
   .properties-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
   }
-
   .main-content {
     padding: 25px 12px 40px;
   }
-
   .filters-sidebar {
     padding: 18px 15px;
   }
 }
-
 @media (width <= 480px) {
   .properties-grid {
     grid-template-columns: 1fr !important;
   }
-
   .range-inputs {
     flex-direction: column;
   }
-
   .range-input {
     width: 100%;
   }
-
   .listings-header {
     flex-direction: column;
     align-items: flex-start !important;
     gap: 10px;
   }
-
   .main-content {
     padding: 20px 10px 30px;
   }
-
   .filters-sidebar {
     padding: 15px 12px;
   }
-
   .property-card .property-details {
     padding: 12px;
   }
 }
-
 .contact-container {
   max-width: 1200px;
   margin: 3rem auto;
@@ -1968,7 +1753,6 @@ button {
   grid-template-columns: 1fr;
   gap: 3rem;
 }
-
 @media (width >= 992px) {
   .contact-container {
     grid-template-columns: 1fr 1fr;
@@ -1981,16 +1765,13 @@ button {
   border-radius: 24px;
   transition: all 0.3s ease;
 }
-
 .contact-info:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-
 .contact-info p {
   font-size: 16px;
 }
-
 .contact-info h1 {
   color: #012a41;
   margin-bottom: 2rem;
@@ -1998,7 +1779,6 @@ button {
   position: relative;
   padding-bottom: 1rem;
 }
-
 .contact-info h1::after {
   content: "";
   position: absolute;
@@ -2014,22 +1794,19 @@ button {
   display: grid;
   gap: 1.8rem;
 }
-
 .contact-details .contact-item {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
   padding: 1.5rem;
-  background: rgb(255 255 255 / 80%);
+  background: rgba(255, 255, 255, 0.8);
   border-radius: 12px;
   transition: all 0.3s ease;
 }
-
 .contact-details .contact-item:hover {
   background: #fff;
   transform: translateX(5px);
 }
-
 .contact-details .contact-item .contact-icon {
   display: flex;
   width: 48px;
@@ -2040,13 +1817,11 @@ button {
   font-size: 1.2rem;
   flex-shrink: 0;
 }
-
 .contact-details .contact-item .contact-content h3 {
   color: #012a41;
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
 }
-
 .contact-details .contact-item .contact-content p,
 .contact-details .contact-item .contact-content a {
   color: #06061c;
@@ -2054,7 +1829,6 @@ button {
   text-decoration: none;
   transition: color 0.3s ease;
 }
-
 .contact-details .contact-item .contact-content p:hover,
 .contact-details .contact-item .contact-content a:hover {
   color: #012a41;
@@ -2064,25 +1838,21 @@ button {
   background: #fff;
   padding: 2.5rem;
   border-radius: 24px;
-  box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
   transition: all 0.3s ease;
 }
-
 .contact-form:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
-
 .contact-form h2 {
   color: #012a41;
   margin-bottom: 2rem;
   font-size: 1.8rem;
 }
-
 .contact-form .form-group {
   margin-bottom: 1.8rem;
 }
-
 .contact-form .form-group label {
   display: block;
   margin-bottom: 0.8rem;
@@ -2090,7 +1860,6 @@ button {
   font-weight: 700;
   font-size: 16px;
 }
-
 .contact-form .form-group input,
 .contact-form .form-group textarea {
   width: 100%;
@@ -2100,19 +1869,16 @@ button {
   font-size: 16px;
   transition: all 0.3s ease;
 }
-
 .contact-form .form-group input:focus,
 .contact-form .form-group textarea:focus {
   outline: none;
   border-color: #012a41;
-  box-shadow: 0 0 0 4px rgb(1 42 65 / 10%);
+  box-shadow: 0 0 0 4px rgba(1, 42, 65, 0.1);
 }
-
 .contact-form .form-group textarea {
   min-height: 150px;
   resize: vertical;
 }
-
 .contact-form .btn-submit {
   width: 100%;
   padding: 1rem;
@@ -2127,7 +1893,6 @@ button {
   max-width: 1224px;
   margin: 3rem auto;
 }
-
 .map-container h2 {
   padding: 0;
   font-size: 40px;
@@ -2136,15 +1901,13 @@ button {
   margin-bottom: 2rem;
   text-align: center;
 }
-
 .map-container .map-wrapper {
   width: 100%;
   height: 500px;
   border-radius: 12px;
   overflow: hidden;
-  box-shadow: 0 4px 14px rgb(0 0 0 / 10%);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
 }
-
 .map-container .map-wrapper iframe {
   width: 100%;
   height: 100%;
@@ -2155,17 +1918,14 @@ button {
   .contact-container {
     gap: 2rem;
   }
-
   .contact-info,
   .contact-form {
     padding: 1.8rem;
   }
-
   .map-wrapper {
     height: 400px;
   }
 }
-
 html,
 body {
   margin: 0;
@@ -2207,7 +1967,6 @@ a {
   font-weight: 700;
   transition: font-weight 0.3s ease;
 }
-
 a:hover {
   font-weight: 800;
   color: black;

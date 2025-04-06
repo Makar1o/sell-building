@@ -1,10 +1,10 @@
 # Capstone Project
 
+To get started with the project, open the index.html file using the Live Server extension in your code editor. This will ensure that all data and features, including property listings and the interactive map, are correctly loaded and displayed.
+
 ## Getting started
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
-
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+To get started with the project, simply open the index.html file in your preferred web browser. This will load the homepage, and from there, you can navigate to other pages such as Categories and Contact Us. Enjoy exploring the interactive features of the site!
 
 ## Add your files
 
