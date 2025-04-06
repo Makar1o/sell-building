@@ -1,17 +1,14 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // Initialize the map with EPAM Kyiv coordinates
-  const map = L.map("map").setView([50.4501, 30.5234], 15);
+document.addEventListener('DOMContentLoaded', function () {
+  const map = L.map('map').setView([50.4501, 30.5234], 15);
 
-  // Use OpenStreetMap with custom styling
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
     detectRetina: true,
   }).addTo(map);
 
-  // Custom EPAM icon
   const epamIcon = L.icon({
-    iconUrl: "https://cdn.epam.com/static/images/logo/epam-logo.svg",
+    iconUrl: 'https://cdn.epam.com/static/images/logo/epam-logo.svg',
     iconSize: [40, 40],
     iconAnchor: [20, 40],
     popupAnchor: [0, -40],
@@ -34,11 +31,4 @@ document.addEventListener("DOMContentLoaded", function () {
     `
     )
     .openPopup();
-
-  // Add custom controls
-  const zoomControl = L.control
-    .zoom({
-      position: "topright",
-    })
-    .addTo(map);
 });

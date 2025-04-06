@@ -1,21 +1,18 @@
-document.addEventListener("DOMContentLoaded", function () {
-  // DOM elements
-  const propertiesGrid = document.getElementById("properties-grid");
-  const loadMoreBtn = document.getElementById("load-more-btn");
+document.addEventListener('DOMContentLoaded', function () {
+  const propertiesGrid = document.getElementById('properties-grid');
+  const loadMoreBtn = document.getElementById('load-more-btn');
   const resultsCount = document.querySelector(
-    ".results-count span:first-child"
+    '.results-count span:first-child'
   );
-  const totalCount = document.querySelector(".results-count span:last-child");
-  const filterForm = document.querySelector(".filters-sidebar");
-  const resetBtn = document.querySelector(".btn-reset");
-  const applyBtn = document.querySelector(".btn-apply-filters");
+  const totalCount = document.querySelector('.results-count span:last-child');
+  const filterForm = document.querySelector('.filters-sidebar');
+  const resetBtn = document.querySelector('.btn-reset');
+  const applyBtn = document.querySelector('.btn-apply-filters');
 
-  // State variables
   let properties = [];
   let filteredProperties = [];
   let visibleCount = 6;
 
-  // Default values
   const DEFAULTS = {
     minPrice: 0,
     maxPrice: 100000,
@@ -26,11 +23,10 @@ document.addEventListener("DOMContentLoaded", function () {
   // Load properties from JSON
   async function loadProperties() {
     try {
-      const response = await fetch("../data/properties.json");
-      if (!response.ok) throw new Error("Network response was not ok");
+      const response = await fetch('../data/properties.json');
+      if (!response.ok) throw new Error('Network response was not ok');
 
       properties = await response.json();
-      // Initialize properties with default values if missing
       properties.forEach((p) => {
         p.amenities = p.amenities || [];
       });
@@ -38,8 +34,8 @@ document.addEventListener("DOMContentLoaded", function () {
       totalCount.textContent = properties.length;
       displayProperties();
     } catch (error) {
-      console.error("Error loading properties:", error);
-      showError("Error loading data. Please try again later.");
+      console.error('Error loading properties:', error);
+      showError('Error loading data. Please try again later.');
     }
   }
 
@@ -49,7 +45,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Display property cards
   function displayProperties() {
-    propertiesGrid.innerHTML = "";
+    propertiesGrid.innerHTML = '';
 
     if (filteredProperties.length === 0) {
       propertiesGrid.innerHTML = `
@@ -62,12 +58,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const toShow = filteredProperties.slice(0, visibleCount);
     toShow.forEach((property) => {
-      const card = document.createElement("div");
-      card.className = "property-card";
+      const card = document.createElement('div');
+      card.className = 'property-card';
       card.innerHTML = `
         <img src="${property.image}" alt="${
-        property.title
-      }" class="property-image" 
+          property.title
+        }" class="property-image" 
              onerror="this.onerror=null;this.src='../images/placeholder.jpg'">
         <div class="property-details">
           <h3 class="property-title">${property.title}</h3>
@@ -78,26 +74,26 @@ document.addEventListener("DOMContentLoaded", function () {
           <div class="property-features">
             <div class="feature">
               <i class="fas fa-bed"></i>
-              ${property.bedrooms} кім.
+              ${property.bedrooms} room.
             </div>
             <div class="feature">
               <i class="fas fa-bath"></i>
-              ${property.bathrooms} санв.
+              ${property.bathrooms} bash.
             </div>
             <div class="feature">
               <i class="fas fa-ruler-combined"></i>
-              ${property.size} м²
+              ${property.size} m²
             </div>
           </div>
           <div class="property-price">
             ${
-              property.transaction === "rent"
-                ? `₴${property.price.toLocaleString("uk-UA")}/міс`
-                : `₴${property.price.toLocaleString("uk-UA")}`
+              property.transaction === 'rent'
+                ? `₴${property.price.toLocaleString('uk-UA')}/month`
+                : `₴${property.price.toLocaleString('uk-UA')}`
             }
           </div>
           <div class="property-actions">
-            <button class="btn-details">Детальніше</button>
+            <button class="btn-details">More Info</button>
             <button class="btn-favorite">
               <i class="far fa-heart"></i>
             </button>
@@ -113,54 +109,53 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Main filter function
   function filterProperties() {
-    // Get all filter values
     const filters = getCurrentFilters();
 
-    // Apply filters
     filteredProperties = properties.filter((property) => {
+      const transactionMatch =
+        !filters.transactionType ||
+        property.transaction === filters.transactionType;
+
       return (
+        transactionMatch &&
         matchesSearch(property, filters.searchTerm) &&
         matchesType(property, filters.propertyType) &&
-        matchesTransaction(property, filters.transactionType) &&
         matchesPrice(property, filters.minPrice, filters.maxPrice) &&
         matchesSize(property, filters.minSize, filters.maxSize) &&
         matchesAmenities(property, filters.selectedAmenities)
       );
     });
 
-    // Apply sorting
     sortProperties(filters.sortValue);
-
-    // Reset visible count and update UI
-    visibleCount = 6;
     displayProperties();
   }
 
   // Get all current filter values
   function getCurrentFilters() {
-    const priceInputs = document.querySelectorAll(
-      ".filter-group:nth-of-type(4) .range-input"
-    );
-    const sizeInputs = document.querySelectorAll(
-      ".filter-group:nth-of-type(6) .range-input"
-    );
+    const sizeInputs = document.querySelectorAll('#size-filter .range-input');
 
     return {
       searchTerm: document
-        .querySelector(".filter-input")
+        .querySelector('.filter-input')
         .value.trim()
         .toLowerCase(),
-      propertyType: document.querySelector("#sort-by").value,
-      transactionType: document.querySelector(
-        'input[name="transaction-type"]:checked'
-      ).value,
-      minPrice: getValidNumber(priceInputs[0], DEFAULTS.minPrice),
-      maxPrice: getValidNumber(priceInputs[1], DEFAULTS.maxPrice),
+      propertyType: document.querySelector('#sort-by').value,
+      transactionType:
+        document.querySelector('input[name="transaction-type"]:checked')
+          ?.value || '',
+      minPrice: getValidNumber(
+        document.getElementById('price-min'),
+        DEFAULTS.minPrice
+      ),
+      maxPrice: getValidNumber(
+        document.getElementById('price-max'),
+        DEFAULTS.maxPrice
+      ),
       minSize: getValidNumber(sizeInputs[0], DEFAULTS.minSize),
       maxSize: getValidNumber(sizeInputs[1], DEFAULTS.maxSize),
       selectedAmenities: getSelectedAmenities(),
       sortValue: document.querySelector(
-        ".filter-group:last-of-type .filter-select"
+        '.filter-group:last-of-type .filter-select'
       ).value,
     };
   }
@@ -177,10 +172,6 @@ document.addEventListener("DOMContentLoaded", function () {
   function matchesType(property, type) {
     if (!type) return true;
     return property.type === type;
-  }
-
-  function matchesTransaction(property, transactionType) {
-    return property.transaction === transactionType;
   }
 
   function matchesPrice(property, minPrice, maxPrice) {
@@ -201,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const amenityCheckboxes = document.querySelectorAll(
       '.checkbox-options input[type="checkbox"]'
     );
-    const amenityValues = ["balcony", "garden", "garage", "pool", "elevator"];
+    const amenityValues = ['balcony', 'garden', 'garage', 'pool', 'elevator'];
 
     const selected = [];
     amenityCheckboxes.forEach((checkbox, index) => {
@@ -212,83 +203,62 @@ document.addEventListener("DOMContentLoaded", function () {
     return selected;
   }
 
-  // Validate number input
   function getValidNumber(input, defaultValue) {
-    if (!input) return defaultValue;
-    const value = parseInt(input.value);
-    return isNaN(value) ? defaultValue : Math.max(0, value);
+    if (!input || !input.value) return defaultValue;
+    const value = Math.max(0, parseInt(input.value));
+    return isNaN(value) ? defaultValue : value;
   }
 
   // Sort properties
   function sortProperties(sortValue) {
     switch (sortValue) {
-      case "price-asc":
+      case 'price-asc':
         filteredProperties.sort((a, b) => a.price - b.price);
         break;
-      case "price-desc":
+      case 'price-desc':
         filteredProperties.sort((a, b) => b.price - a.price);
         break;
-      case "newest":
+      case 'newest':
         filteredProperties.sort(
           (a, b) => new Date(b.dateAdded) - new Date(a.dateAdded)
         );
         break;
       default:
-        // No sorting
         break;
     }
   }
 
   // Reset all filters
   function resetFilters() {
-    // Reset radio buttons
-    document.querySelector(
-      'input[name="transaction-type"][value="rent"]'
-    ).checked = true;
+    document
+      .querySelectorAll('input[name="transaction-type"]')
+      .forEach((radio) => {
+        radio.checked = false;
+      });
 
-    // Reset property type dropdown
-    document.querySelector("#sort-by").value = "";
+    document.querySelector('#sort-by').value = '';
 
-    // Reset location search
-    document.querySelector(".filter-input").value = "";
+    document.querySelector('.filter-input').value = '';
+    document.getElementById('price-min').value = DEFAULTS.minPrice;
+    document.getElementById('price-max').value = DEFAULTS.maxPrice;
 
-    // Reset price inputs
-    const priceInputs = document.querySelectorAll(
-      ".filter-group:nth-of-type(4) .range-input"
-    );
-    if (priceInputs.length >= 2) {
-      priceInputs[0].value = DEFAULTS.minPrice;
-      priceInputs[1].value = DEFAULTS.maxPrice;
-    }
-
-    // Reset price sliders
-    const priceSliders = document.querySelectorAll(".range-slider .slider");
-    if (priceSliders.length >= 2) {
-      priceSliders[0].value = DEFAULTS.minPrice;
-      priceSliders[1].value = DEFAULTS.maxPrice;
-    }
-
-    // Reset size inputs
     const sizeInputs = document.querySelectorAll(
-      ".filter-group:nth-of-type(6) .range-input"
+      '.filter-group:nth-of-type(6) .range-input'
     );
     if (sizeInputs.length >= 2) {
       sizeInputs[0].value = DEFAULTS.minSize;
       sizeInputs[1].value = DEFAULTS.maxSize;
     }
 
-    // Reset amenities checkboxes
     document
       .querySelectorAll('.checkbox-options input[type="checkbox"]')
       .forEach((checkbox) => {
         checkbox.checked = false;
       });
 
-    // Reset sort dropdown
-    document.querySelector(".filter-group:last-of-type .filter-select").value =
-      "newest";
+    document.querySelector('.filter-group:last-of-type .filter-select').value =
+      'newest';
 
-    // Reset application state
     filteredProperties = [...properties];
     visibleCount = 6;
     displayProperties();
@@ -309,38 +279,85 @@ document.addEventListener("DOMContentLoaded", function () {
   function toggleLoadMoreButton() {
     if (loadMoreBtn) {
       loadMoreBtn.style.display =
-        visibleCount >= filteredProperties.length ? "none" : "block";
+        visibleCount >= filteredProperties.length ? 'none' : 'block';
     }
+  }
+
+  // Input validation
+  function setupInputValidation() {
+    document.querySelectorAll('.range-input').forEach((input) => {
+      input.addEventListener('change', function () {
+        const value = parseInt(this.value);
+        if (isNaN(value)) {
+          this.value = '';
+        } else if (value < 0) {
+          this.value = Math.max(0, value);
+        }
+      });
+    });
   }
 
   // Initialize event listeners
   function setupEventListeners() {
-    // Load more properties
-    loadMoreBtn?.addEventListener("click", () => {
+    loadMoreBtn?.addEventListener('click', () => {
       visibleCount += 6;
       displayProperties();
     });
 
-    // Filter changes
-    filterForm?.addEventListener("change", filterProperties);
-    filterForm?.addEventListener("input", (e) => {
+    filterForm?.addEventListener('change', filterProperties);
+    filterForm?.addEventListener('input', (e) => {
       if (
-        e.target.classList.contains("range-input") ||
-        e.target.type === "checkbox" ||
-        e.target.classList.contains("filter-input")
+        e.target.classList.contains('range-input') ||
+        e.target.type === 'checkbox' ||
+        e.target.classList.contains('filter-input')
       ) {
         filterProperties();
       }
     });
 
-    // Apply filters button
-    applyBtn?.addEventListener("click", filterProperties);
+    applyBtn?.addEventListener('click', filterProperties);
 
-    // Reset filters
-    resetBtn?.addEventListener("click", resetFilters);
+    resetBtn?.addEventListener('click', resetFilters);
+
+    setupInputValidation();
   }
 
   // Initialize the page
   loadProperties();
   setupEventListeners();
+});
+
+// Mobile menu functionality remains the same
+document.addEventListener('DOMContentLoaded', function () {
+  const burgerBtn = document.getElementById('burgerBtn');
+  const closeBtn = document.getElementById('closeMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuOverlay = document.getElementById('menuOverlay');
+
+  burgerBtn.addEventListener('click', function () {
+    this.classList.toggle('active');
+    mobileMenu.classList.toggle('active');
+    menuOverlay.classList.toggle('active');
+  });
+
+  closeBtn.addEventListener('click', function () {
+    burgerBtn.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    menuOverlay.classList.remove('active');
+  });
+
+  menuOverlay.addEventListener('click', function () {
+    burgerBtn.classList.remove('active');
+    mobileMenu.classList.remove('active');
+    this.classList.remove('active');
+  });
+
+  const navItems = document.querySelectorAll('.mobile-menu .nav-item');
+  navItems.forEach((item) => {
+    item.addEventListener('click', function () {
+      burgerBtn.classList.remove('active');
+      mobileMenu.classList.remove('active');
+      menuOverlay.classList.remove('active');
+    });
+  });
 });

@@ -2,19 +2,30 @@
   "name": "capstone-mykytyn",
   "version": "1.0.0",
   "main": "compile-sass.js",
+  "type": "module",
   "scripts": {
     "compile:sass": "sass src/scss/style.scss:dist/css/style.css --watch",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "lint:css": "stylelint \"**/*.{css,scss}\""
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "sass": "^1.86.0"
+    "eslint": "^9.24.0",
+    "eslint-config-prettier": "^10.1.1",
+    "prettier": "^3.5.3",
+    "sass": "^1.86.0",
+    "stylelint": "^16.17.0",
+    "stylelint-config-recommended-vue": "^1.6.0",
+    "stylelint-config-standard": "^37.0.0",
+    "stylelint-config-standard-scss": "^14.0.0"
   },
   "dependencies": {
-    "node-sass": "^9.0.0",
-    "leaflet": "^1.9.4"
+    "leaflet": "^1.9.4",
+    "node-sass": "^9.0.0"
   }
 }

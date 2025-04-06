@@ -1,6 +1,21 @@
 [
   {
     "id": 1,
+    "title": "Charming House in Chernivtsi",
+    "type": "house",
+    "transaction": "sale",
+    "price": 90000,
+    "size": 90,
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "location": "Chernivtsi, Central District",
+    "amenities": ["garden"],
+    "image": "../images/1-rentsell.png",
+    "description": "Beautiful historical house with modern comforts in the city center.",
+    "dateAdded": "2023-07-22"
+  },
+  {
+    "id": 2,
     "title": "Modern Apartment in Kyiv",
     "type": "apartment",
     "transaction": "rent",
@@ -13,21 +28,6 @@
     "image": "../images/1-rentsell.png",
     "description": "Bright and cozy apartment in the heart of Kyiv with beautiful city views.",
     "dateAdded": "2023-10-15"
-  },
-  {
-    "id": 2,
-    "title": "Luxury Villa in Odesa",
-    "type": "villa",
-    "transaction": "sale",
-    "price": 250000,
-    "size": 180,
-    "bedrooms": 4,
-    "bathrooms": 3,
-    "location": "Odesa, Prymorskyi District",
-    "amenities": ["pool", "garden", "garage"],
-    "image": "../images/1-rentsell.png",
-    "description": "Stunning villa with direct access to the beach and private pool.",
-    "dateAdded": "2023-09-20"
   },
   {
     "id": 3,
@@ -46,36 +46,6 @@
   },
   {
     "id": 4,
-    "title": "Family House in Kharkiv",
-    "type": "house",
-    "transaction": "sale",
-    "price": 120000,
-    "size": 110,
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "location": "Kharkiv, Shevchenkivskyi District",
-    "amenities": ["garden", "garage"],
-    "image": "../images/1-rentsell.png",
-    "description": "Spacious family house in a quiet neighborhood with all amenities.",
-    "dateAdded": "2023-08-12"
-  },
-  {
-    "id": 5,
-    "title": "Penthouse in Kyiv",
-    "type": "apartment",
-    "transaction": "sale",
-    "price": 350000,
-    "size": 150,
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "location": "Kyiv, Pecherskyi District",
-    "amenities": ["balcony", "elevator", "pool"],
-    "image": "../images/1-rentsell.png",
-    "description": "Exclusive penthouse with breathtaking views of the Dnipro river.",
-    "dateAdded": "2023-11-20"
-  },
-  {
-    "id": 6,
     "title": "Country House near Kyiv",
     "type": "house",
     "transaction": "rent",
@@ -90,7 +60,7 @@
     "dateAdded": "2023-10-01"
   },
   {
-    "id": 7,
+    "id": 5,
     "title": "Business Class Apartment",
     "type": "apartment",
     "transaction": "rent",
@@ -105,7 +75,7 @@
     "dateAdded": "2023-09-15"
   },
   {
-    "id": 8,
+    "id": 6,
     "title": "Charming House in Chernivtsi",
     "type": "house",
     "transaction": "sale",
@@ -120,7 +90,7 @@
     "dateAdded": "2023-07-22"
   },
   {
-    "id": 9,
+    "id": 7,
     "title": "New Apartment in Vinnytsia",
     "type": "apartment",
     "transaction": "rent",
@@ -134,39 +104,9 @@
     "description": "Brand new apartment in a modern residential complex with amenities.",
     "dateAdded": "2023-11-10"
   },
-  {
-    "id": 10,
-    "title": "Luxury Apartment in Odesa",
-    "type": "apartment",
-    "transaction": "sale",
-    "price": 220000,
-    "size": 85,
-    "bedrooms": 2,
-    "bathrooms": 2,
-    "location": "Odesa, Arcadia District",
-    "amenities": ["balcony", "pool"],
-    "image": "../images/1-rentsell.png",
-    "description": "Luxury apartment steps away from the beach in prestigious Arcadia.",
-    "dateAdded": "2023-10-30"
-  },
-  {
-    "id": 11,
-    "title": "Townhouse in Lviv",
-    "type": "house",
-    "transaction": "sale",
-    "price": 160000,
-    "size": 120,
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "location": "Lviv, Frankivskyi District",
-    "amenities": ["garden", "garage"],
-    "image": "../images/1-rentsell.png",
-    "description": "Modern townhouse in a quiet residential area with good transport.",
-    "dateAdded": "2023-08-05"
-  },
 
   {
-    "id": 12,
+    "id": 8,
     "title": "Modern Apartment in Kyiv",
     "type": "apartment",
     "transaction": "rent",
@@ -181,22 +121,7 @@
     "dateAdded": "2023-10-15"
   },
   {
-    "id": 13,
-    "title": "Luxury Villa in Odesa",
-    "type": "villa",
-    "transaction": "sale",
-    "price": 250000,
-    "size": 180,
-    "bedrooms": 4,
-    "bathrooms": 3,
-    "location": "Odesa, Prymorskyi District",
-    "amenities": ["pool", "garden", "garage"],
-    "image": "../images/1-rentsell.png",
-    "description": "Stunning villa with direct access to the beach and private pool.",
-    "dateAdded": "2023-09-20"
-  },
-  {
-    "id": 14,
+    "id": 9,
     "title": "Cozy Studio in Lviv",
     "type": "studio",
     "transaction": "rent",
@@ -210,38 +135,9 @@
     "description": "Perfect studio for students or young professionals in the historic center.",
     "dateAdded": "2023-11-05"
   },
+
   {
-    "id": 15,
-    "title": "Family House in Kharkiv",
-    "type": "house",
-    "transaction": "sale",
-    "price": 120000,
-    "size": 110,
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "location": "Kharkiv, Shevchenkivskyi District",
-    "amenities": ["garden", "garage"],
-    "image": "../images/1-rentsell.png",
-    "description": "Spacious family house in a quiet neighborhood with all amenities.",
-    "dateAdded": "2023-08-12"
-  },
-  {
-    "id": 16,
-    "title": "Penthouse in Kyiv",
-    "type": "apartment",
-    "transaction": "sale",
-    "price": 350000,
-    "size": 150,
-    "bedrooms": 3,
-    "bathrooms": 2,
-    "location": "Kyiv, Pecherskyi District",
-    "amenities": ["balcony", "elevator", "pool"],
-    "image": "../images/1-rentsell.png",
-    "description": "Exclusive penthouse with breathtaking views of the Dnipro river.",
-    "dateAdded": "2023-11-20"
-  },
-  {
-    "id": 17,
+    "id": 10,
     "title": "Country House near Kyiv",
     "type": "house",
     "transaction": "rent",
@@ -256,7 +152,7 @@
     "dateAdded": "2023-10-01"
   },
   {
-    "id": 18,
+    "id": 11,
     "title": "Business Class Apartment",
     "type": "apartment",
     "transaction": "rent",
@@ -271,22 +167,7 @@
     "dateAdded": "2023-09-15"
   },
   {
-    "id": 19,
-    "title": "Charming House in Chernivtsi",
-    "type": "house",
-    "transaction": "sale",
-    "price": 90000,
-    "size": 90,
-    "bedrooms": 3,
-    "bathrooms": 1,
-    "location": "Chernivtsi, Central District",
-    "amenities": ["garden"],
-    "image": "../images/1-rentsell.png",
-    "description": "Beautiful historical house with modern comforts in the city center.",
-    "dateAdded": "2023-07-22"
-  },
-  {
-    "id": 20,
+    "id": 12,
     "title": "New Apartment in Vinnytsia",
     "type": "apartment",
     "transaction": "rent",
@@ -301,33 +182,33 @@
     "dateAdded": "2023-11-10"
   },
   {
-    "id": 21,
-    "title": "Luxury Apartment in Odesa",
-    "type": "apartment",
-    "transaction": "sale",
-    "price": 220000,
-    "size": 85,
-    "bedrooms": 2,
-    "bathrooms": 2,
-    "location": "Odesa, Arcadia District",
-    "amenities": ["balcony", "pool"],
-    "image": "../images/1-rentsell.png",
-    "description": "Luxury apartment steps away from the beach in prestigious Arcadia.",
-    "dateAdded": "2023-10-30"
-  },
-  {
-    "id": 22,
-    "title": "Townhouse in Lviv",
+    "id": 13,
+    "title": "Charming House in Chernivtsi",
     "type": "house",
     "transaction": "sale",
-    "price": 160000,
-    "size": 120,
+    "price": 80000,
+    "size": 90,
     "bedrooms": 3,
-    "bathrooms": 2,
-    "location": "Lviv, Frankivskyi District",
-    "amenities": ["garden", "garage"],
+    "bathrooms": 1,
+    "location": "Chernivtsi, Central District",
+    "amenities": ["garden"],
     "image": "../images/1-rentsell.png",
-    "description": "Modern townhouse in a quiet residential area with good transport.",
-    "dateAdded": "2023-08-05"
+    "description": "Beautiful historical house with modern comforts in the city center.",
+    "dateAdded": "2023-07-22"
+  },
+  {
+    "id": 14,
+    "title": "Charming House in Chernivtsi",
+    "type": "house",
+    "transaction": "sale",
+    "price": 70000,
+    "size": 90,
+    "bedrooms": 3,
+    "bathrooms": 1,
+    "location": "Chernivtsi, Central District",
+    "amenities": ["garden"],
+    "image": "../images/1-rentsell.png",
+    "description": "Beautiful historical house with modern comforts in the city center.",
+    "dateAdded": "2023-07-22"
   }
 ]

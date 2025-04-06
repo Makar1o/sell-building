@@ -1,7 +1,6 @@
 @use "../utils/variables" as *;
 @use "../buttons.scss" as *;
 
-/* Page Title & Breadcrumbs */
 .page-title {
   font-size: 32px;
   font-weight: 700;
@@ -11,7 +10,7 @@
 
 .breadcrumbs {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  color: rgb(255 255 255 / 80%);
   font-family: $font-main;
 
   a {
@@ -29,22 +28,20 @@
   }
 }
 
-/* Main Content Layout */
 .main-content {
   display: flex;
-  padding: 30px 0 50px;
+  padding: 30px 15px 50px;
   gap: 30px;
   max-width: 1440px;
   margin: 0 auto;
 }
 
-/* Filters Sidebar */
 .filters-sidebar {
   width: 280px;
   flex-shrink: 0;
   background-color: $white-color;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
   padding: 25px;
   height: fit-content;
   position: sticky;
@@ -66,10 +63,6 @@
 
   .filter-group {
     margin-bottom: 25px;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
   }
 
   .filter-title {
@@ -179,28 +172,20 @@
     }
   }
 
-  /* Improved Range Inputs */
   .range-inputs {
     display: flex;
-    flex-direction: column;
     gap: 10px;
     margin-bottom: 15px;
   }
 
-  .range-input-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
   .range-input {
     flex: 1;
-    padding: 8px 12px;
+    padding: 10px 12px;
     border: 1px solid $secondary-color;
     border-radius: 16px;
     font-size: $font-size-base;
     font-family: $font-main;
-    max-width: calc(50% - 5px);
+    min-width: 100px;
 
     &:focus {
       outline: none;
@@ -210,77 +195,8 @@
 
   .range-separator {
     color: $accent-color;
-    width: 10px;
-    text-align: center;
-  }
-
-  /* Improved Range Slider */
-  .range-slider {
-    width: 100%;
-    margin-top: 10px;
-    position: relative;
-    height: 4px;
-    background-color: $secondary-color;
-    border-radius: 2px;
-
-    .slider-track {
-      height: 100%;
-      background-color: $primary-color;
-      border-radius: 2px;
-      position: absolute;
-    }
-
-    input[type="range"] {
-      -webkit-appearance: none;
-      width: 100%;
-      position: absolute;
-      top: -8px;
-      height: 8px;
-      background: transparent;
-      pointer-events: none;
-
-      &::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        width: 18px;
-        height: 18px;
-        border-radius: 50%;
-        background: $primary-color;
-        cursor: pointer;
-        pointer-events: auto;
-        border: 2px solid $white-color;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-      }
-    }
-  }
-
-  /* Search Field */
-  .search-field {
-    position: relative;
-    margin-bottom: 25px;
-
-    input {
-      width: 100%;
-      padding: 10px 12px 10px 40px;
-      border: 1px solid $secondary-color;
-      border-radius: 16px;
-      font-size: $font-size-base;
-      font-family: $font-main;
-      transition: all 0.3s ease;
-
-      &:focus {
-        outline: none;
-        border-color: $primary-color;
-        box-shadow: 0 0 0 2px rgba($primary-color, 0.2);
-      }
-    }
-
-    i {
-      position: absolute;
-      left: 15px;
-      top: 50%;
-      transform: translateY(-50%);
-      color: $accent-color;
-    }
+    display: flex;
+    align-items: center;
   }
 
   .checkbox-options {
@@ -291,6 +207,7 @@
 
   .btn-apply-filters {
     @extend .primary-btn;
+
     width: 100%;
     padding: 14px;
     margin-top: 20px;
@@ -298,6 +215,7 @@
 
   .btn-reset {
     @extend .secondary-btn;
+
     padding: 8px 12px;
     border-width: 1px;
     font-size: 14px;
@@ -305,7 +223,6 @@
   }
 }
 
-/* Property Listings */
 .property-listings {
   flex: 1;
 
@@ -346,17 +263,16 @@
   }
 }
 
-/* Property Card */
 .property-card {
   background-color: $white-color;
   border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgb(0 0 0 / 8%);
   overflow: hidden;
   transition: all 0.3s ease;
 
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 20px rgb(0 0 0 / 10%);
   }
 
   .property-image {
@@ -423,6 +339,7 @@
 
       .btn-details {
         @extend .primary-btn;
+
         flex: 1;
         padding: 10px;
         font-size: $font-size-base;
@@ -442,7 +359,7 @@
 
         &:hover {
           color: #ff4757;
-          background-color: rgba(255, 71, 87, 0.1);
+          background-color: rgb(255 71 87 / 10%);
         }
       }
     }
@@ -451,6 +368,7 @@
 
 .btn-load-more {
   @extend .secondary-btn;
+
   padding: 14px 28px;
   display: inline-flex;
   margin: 0 auto;
@@ -464,26 +382,35 @@
   }
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
+@media (width <= 1024px) {
   .main-content {
     flex-direction: column;
+    padding: 30px 15px 50px;
   }
 
   .filters-sidebar {
     width: 100%;
     position: static;
     margin-bottom: 30px;
+    padding: 20px;
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .properties-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)) !important;
   }
+
+  .main-content {
+    padding: 25px 12px 40px;
+  }
+
+  .filters-sidebar {
+    padding: 18px 15px;
+  }
 }
 
-@media (max-width: 480px) {
+@media (width <= 480px) {
   .properties-grid {
     grid-template-columns: 1fr !important;
   }
@@ -493,12 +420,24 @@
   }
 
   .range-input {
-    max-width: 100% !important;
+    width: 100%;
   }
 
   .listings-header {
     flex-direction: column;
     align-items: flex-start !important;
     gap: 10px;
+  }
+
+  .main-content {
+    padding: 20px 10px 30px;
+  }
+
+  .filters-sidebar {
+    padding: 15px 12px;
+  }
+
+  .property-card .property-details {
+    padding: 12px;
   }
 }

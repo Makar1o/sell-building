@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -27,24 +27,69 @@
           </a>
         </div>
 
-        <nav>
+        <nav class="desktop-nav">
           <ul class="nav-list">
             <li><a href="#about-us" class="nav-item">About Us</a></li>
             <li><a href="#properties" class="nav-item">Properties</a></li>
-            <li>
-              <a href="./categories.html" class="nav-item">Categories</a>
-            </li>
+            <li><a href="./categories.html" class="nav-item">Categories</a></li>
             <li><a href="#services" class="nav-item">Services</a></li>
             <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
           </ul>
         </nav>
 
-        <div class="cta-buttons">
+        <div class="desktop-cta cta-buttons">
           <button class="secondary-btn">Log In</button>
-          <button class="primary-btn">Get Started</button>
+          <a href="./categories.html">
+            <button class="primary-btn">Get Started</button>
+          </a>
         </div>
+
+        <!-- Burger btn -->
+        <button class="burger-btn" id="burgerBtn">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
       </div>
     </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" id="closeMenuBtn">×</button>
+
+      <ul class="nav-list">
+        <li><a href="#about-us" class="nav-item">About Us</a></li>
+        <li><a href="#properties" class="nav-item">Properties</a></li>
+        <li><a href="./categories.html" class="nav-item">Categories</a></li>
+        <li><a href="#services" class="nav-item">Services</a></li>
+        <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
+      </ul>
+
+      <div class="cta-buttons">
+        <button class="secondary-btn">Log In</button>
+        <button class="primary-btn">Get Started</button>
+      </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="nav-list">
+        <li><a href="#about-us" class="nav-item">About Us</a></li>
+        <li><a href="#properties" class="nav-item">Properties</a></li>
+        <li>
+          <a href="./categories.html" class="nav-item">Categories</a>
+        </li>
+        <li><a href="#services" class="nav-item">Services</a></li>
+        <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
+      </ul>
+
+      <div class="cta-buttons">
+        <button class="secondary-btn">Log In</button>
+        <button class="primary-btn">Get Started</button>
+      </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
     <!-- HERO SECTION -->
     <section class="hero-section">
       <div class="hero-section-img">
@@ -62,10 +107,10 @@
     </section>
     <!-- ABOUT US -->
     <section class="about-container">
-      <h2 class="topic-xl topic-about">About Us</h2>
+      <h2 class="topic-about">About Us</h2>
       <div class="about-content">
-        <div>
-          <h3 class="topic-l about-under-topic">
+        <div class="about-text">
+          <h3 class="about-under-topic">
             Building Foundations Creating Futures
           </h3>
           <p class="about-p">
@@ -77,15 +122,40 @@
             Our team is committed to offering the highest standard of service,
             ensuring every step of the process is as seamless as possible.
             Whether you are looking for a new home or an investment opportunity,
-            we’re here to guide you.
+            we're here to guide you.
           </p>
           <button class="bigger-primary-btn primary-btn">Learn More</button>
         </div>
         <div class="benefits-building">
-          <img src="../images/about.png" alt="Building" />
+          <div class="image-carousel">
+            <img
+              src="../images/house-carusel-1.jpg"
+              alt="House 1"
+              class="carousel-image active"
+            />
+            <img
+              src="../images/house-carusel-2.jpg"
+              alt="House 2"
+              class="carousel-image"
+            />
+            <img
+              src="../images/house-carusel-3.jpg"
+              alt="House 3"
+              class="carousel-image"
+            />
+            <img
+              src="../images/house-carusel-4.jpg"
+              alt="House 4"
+              class="carousel-image"
+            />
+            <button class="carousel-arrow prev">‹</button>
+            <button class="carousel-arrow next">›</button>
+            <div class="carousel-dots"></div>
+          </div>
         </div>
       </div>
     </section>
+
     <!-- OUR BENEFITS -->
     <section class="our-benefits">
       <h3 class="topic-l">Why Choose Our Platform</h3>
@@ -142,7 +212,7 @@
     </section>
     <!-- Categories -->
     <section class="categories-container">
-      <h2 class="topic-xl categories-topic">Explore Property Types</h2>
+      <h2 class="categories-topic">Explore Property Types</h2>
       <div class="categories-grid">
         <div class="image-wrapper">
           <img
@@ -193,9 +263,11 @@
           <p class="categories-status-left">Rent</p>
         </div>
       </div>
-      <button class="bigger-primary-btn primary-btn types-button">
-        Browse All Listings
-      </button>
+      <a href="./categories.html">
+        <button class="bigger-primary-btn primary-btn types-button">
+          Browse All Listings
+        </button>
+      </a>
     </section>
     <!-- STATS -->
     <section class="stats-container">
@@ -209,7 +281,7 @@
           <h2 class="stats-topic">Your Trusted Investment Partner</h2>
           <div class="stats-content">
             <div>
-              <h3 class="topic-l stats-num">12,000+</h3>
+              <h3 class="topic-l stats-num first-stat">12,000+</h3>
               <p class="stats-text">Properties Listed</p>
             </div>
             <hr />
@@ -234,14 +306,19 @@
     <!-- Contact Us -->
     <section class="cta-container">
       <div class="cta-image">
-        <h2 class="topic-xl cta-topic">Ready to Make Your Move?</h2>
+        <h2 class="cta-topic">Ready to Make Your Move?</h2>
         <p class="cta-text">
           Join thousands of satisfied clients and find your dream property
           today. Whether you're buying or renting, we've got you covered.
         </p>
-        <div class="cta-buttons">
-          <button class="bigger-secondary-btn secondary-btn">Contact Us</button>
-          <button class="bigger-primary-btn primary-btn">Get Started</button>
+        <div class="cta-buttons-ct">
+          <a href="./contact.html">
+            <button class="bigger-secondary-btn secondary-btn">
+              Contact Us
+            </button> </a
+          ><a href="./categories.html">
+            <button class="bigger-primary-btn primary-btn">Get Started</button>
+          </a>
         </div>
       </div>
     </section>
@@ -249,21 +326,23 @@
     <footer class="footer-container">
       <div class="footer-inner">
         <div class="footer-logo">
-          <img
-            src="../images/logo-white.png"
-            alt="Logo"
-            class="footer-logo-img"
-          />
+          <a href="./home.html">
+            <img
+              src="../images/logo-white.png"
+              alt="Logo"
+              class="footer-logo-img"
+            />
+          </a>
         </div>
         <div class="footer-columns">
           <div class="footer-column">
             <h4>Explore</h4>
             <div class="footer-links">
-              <a href="#">Buy a Property</a>
-              <a href="#">Rent a Property</a>
-              <a href="#">Property Categories</a>
+              <a href="./categories.html">Buy a Property</a>
+              <a href="./categories.html">Rent a Property</a>
+              <a href="./categories.html">Property Categories</a>
               <a href="#">Neighborhood Guide</a>
-              <a href="#">Gallery</a>
+              <a href="./categories.html">Gallery</a>
             </div>
           </div>
           <div class="footer-column">
@@ -287,7 +366,7 @@
             <div class="footer-links">
               <a href="#">Expert Insights</a>
               <a href="#">Latest Updates</a>
-              <a href="#">Stay Informed</a>
+              <a href="./contact.html">Stay Informed</a>
             </div>
           </div>
           <div class="footer-column">
@@ -295,7 +374,7 @@
             <div class="footer-links">
               <a href="#">About Us</a>
               <a href="#">Our Team</a>
-              <a href="#">Get in Touch</a>
+              <a href="./contact.html">Get in Touch</a>
             </div>
             <div class="footer-links">
               <a href="#">Investor Login</a>
@@ -310,7 +389,9 @@
       </div>
       <div class="footer-bottom">
         <div>
-          <p class="copy-right">© 2025 Ares Management. All Rights Reserved.</p>
+          <p class="copy-right">
+            © 2025 Ares Management. All Rights Reserved.
+          </p>
         </div>
         <div class="footer-links footer-policy">
           <a href="#">Terms & Conditions</a>
@@ -322,5 +403,6 @@
       </div>
     </footer>
     <script src="../js/main.js"></script>
+    <script src="../js/carusel.js"></script>
   </body>
 </html>

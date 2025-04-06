@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -29,22 +29,29 @@
           </a>
         </div>
 
-        <nav>
+        <nav class="desktop-nav">
           <ul class="nav-list">
             <li><a href="#about-us" class="nav-item">About Us</a></li>
             <li><a href="#properties" class="nav-item">Properties</a></li>
-            <li>
-              <a href="./categories.html" class="nav-item">Categories</a>
-            </li>
+            <li><a href="./categories.html" class="nav-item">Categories</a></li>
             <li><a href="#services" class="nav-item">Services</a></li>
             <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
           </ul>
         </nav>
 
-        <div class="cta-buttons">
+        <div class="desktop-cta cta-buttons">
           <button class="secondary-btn">Log In</button>
-          <button class="primary-btn">Get Started</button>
+          <a href="./categories.html">
+            <button class="primary-btn">Get Started</button>
+          </a>
         </div>
+
+        <!-- Burger btn -->
+        <button class="burger-btn" id="burgerBtn">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
       </div>
     </header>
 
@@ -126,21 +133,23 @@
     <footer class="footer-container">
       <div class="footer-inner">
         <div class="footer-logo">
-          <img
-            src="../images/logo-white.png"
-            alt="Logo"
-            class="footer-logo-img"
-          />
+          <a href="./home.html">
+            <img
+              src="../images/logo-white.png"
+              alt="Logo"
+              class="footer-logo-img"
+            />
+          </a>
         </div>
         <div class="footer-columns">
           <div class="footer-column">
             <h4>Explore</h4>
             <div class="footer-links">
-              <a href="#">Buy a Property</a>
-              <a href="#">Rent a Property</a>
-              <a href="#">Property Categories</a>
+              <a href="./categories.html">Buy a Property</a>
+              <a href="./categories.html">Rent a Property</a>
+              <a href="./categories.html">Property Categories</a>
               <a href="#">Neighborhood Guide</a>
-              <a href="#">Gallery</a>
+              <a href="./categories.html">Gallery</a>
             </div>
           </div>
           <div class="footer-column">
@@ -164,7 +173,7 @@
             <div class="footer-links">
               <a href="#">Expert Insights</a>
               <a href="#">Latest Updates</a>
-              <a href="#">Stay Informed</a>
+              <a href="./contact.html">Stay Informed</a>
             </div>
           </div>
           <div class="footer-column">
@@ -172,7 +181,7 @@
             <div class="footer-links">
               <a href="#">About Us</a>
               <a href="#">Our Team</a>
-              <a href="#">Get in Touch</a>
+              <a href="./contact.html">Get in Touch</a>
             </div>
             <div class="footer-links">
               <a href="#">Investor Login</a>
@@ -187,7 +196,9 @@
       </div>
       <div class="footer-bottom">
         <div>
-          <p class="copy-right">© 2025 Ares Management. All Rights Reserved.</p>
+          <p class="copy-right">
+            © 2025 Ares Management. All Rights Reserved.
+          </p>
         </div>
         <div class="footer-links footer-policy">
           <a href="#">Terms & Conditions</a>

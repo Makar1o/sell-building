@@ -1,12 +1,12 @@
 @use "../utils/variables" as *;
 @use "../buttons" as *;
 
-// Mixins
 @mixin card-effect {
   transition: all 0.3s ease;
+
   &:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 20px rgb(0 0 0 / 10%);
   }
 }
 
@@ -18,7 +18,7 @@
   grid-template-columns: 1fr;
   gap: 3rem;
 
-  @media (min-width: 992px) {
+  @media (width >= 992px) {
     grid-template-columns: 1fr 1fr;
   }
 }
@@ -31,6 +31,7 @@
   );
   padding: 2.5rem;
   border-radius: 24px;
+
   @include card-effect;
 
   p {
@@ -112,7 +113,8 @@
   background: $white-color;
   padding: 2.5rem;
   border-radius: 24px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 5px 15px rgb(0 0 0 / 5%);
+
   @include card-effect;
 
   h2 {
@@ -156,6 +158,7 @@
 
   .btn-submit {
     @extend .primary-btn;
+
     width: 100%;
     padding: 1rem;
     margin-top: 1rem;
@@ -178,12 +181,13 @@
     margin-bottom: 2rem;
     text-align: center;
   }
+
   .map-wrapper {
     width: 100%;
     height: 500px;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 14px rgb(0 0 0 / 10%);
 
     iframe {
       width: 100%;
@@ -193,7 +197,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   .contact-container {
     gap: 2rem;
   }
