@@ -8,7 +8,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "lint:css": "stylelint \"**/*.{css,scss}\""
+    "lint:css": "stylelint \"**/*.{css,scss}\"",
+    "build": "npm run compile-sass && vite build",
+    "dev": "vite serve"
   },
   "keywords": [],
   "author": "",

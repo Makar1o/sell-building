@@ -1,21 +1,16 @@
-# Залежності
 node_modules/
 dist/
 build/
 
-# Секрети
 .env
 *.env.local
 *.pem
 
-# Логи та кеш
 npm-debug.log*
 
-# IDE/Editor
 .idea/
 .vscode/
 *.swp
 
-# Системні файли
 .DS_Store
 Thumbs.db
