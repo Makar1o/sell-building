@@ -4,7 +4,7 @@
   "main": "compile-sass.js",
   "type": "module",
   "scripts": {
-    "compile:sass": "sass src/scss/style.scss:dist/css/style.css --watch",
+    "compile-sass": "sass src/scss:dist/css --no-source-map",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -20,11 +20,12 @@
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
     "prettier": "^3.5.3",
-    "sass": "^1.86.0",
+    "sass": "^1.86.3",
     "stylelint": "^16.17.0",
     "stylelint-config-recommended-vue": "^1.6.0",
     "stylelint-config-standard": "^37.0.0",
-    "stylelint-config-standard-scss": "^14.0.0"
+    "stylelint-config-standard-scss": "^14.0.0",
+    "vite": "^6.2.5"
   },
   "dependencies": {
     "leaflet": "^1.9.4",
