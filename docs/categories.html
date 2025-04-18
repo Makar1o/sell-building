@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Property Listings</title>
+    <link rel="stylesheet" href="../../dist/css/style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&family=Lora:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- Main Header -->
+    <header class="header">
+      <div class="header-content">
+        <div class="header-container">
+          <a href="./home.html">
+            <img class="rectangle-1" src="/assets/logo-DZtFgJiY.png" alt="Logo" />
+          </a>
+        </div>
+
+        <nav class="desktop-nav">
+          <ul class="nav-list">
+            <li><a href="#about-us" class="nav-item">About Us</a></li>
+            <li><a href="#properties" class="nav-item">Properties</a></li>
+            <li><a href="./categories.html" class="nav-item">Categories</a></li>
+            <li><a href="#services" class="nav-item">Services</a></li>
+            <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <div class="desktop-cta cta-buttons">
+          <button class="secondary-btn">Log In</button>
+          <a href="./categories.html">
+            <button class="primary-btn">Get Started</button>
+          </a>
+        </div>
+
+        <!-- Burger btn -->
+        <button class="burger-btn" id="burgerBtn">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" id="closeMenuBtn">×</button>
+
+      <ul class="nav-list">
+        <li><a href="#about-us" class="nav-item">About Us</a></li>
+        <li><a href="#properties" class="nav-item">Properties</a></li>
+        <li><a href="./categories.html" class="nav-item">Categories</a></li>
+        <li><a href="#services" class="nav-item">Services</a></li>
+        <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
+      </ul>
+
+      <div class="cta-buttons">
+        <button class="secondary-btn">Log In</button>
+        <button class="primary-btn">Get Started</button>
+      </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Secondary Header -->
+    <header class="secondary-header">
+      <div class="header-container">
+        <h1 class="page-title">Property Listings</h1>
+        <div class="breadcrumbs">
+          <a href="#">Home</a> / <a href="#">Properties</a> /
+          <span>All Listings</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <!-- Filters Sidebar -->
+      <aside class="filters-sidebar">
+        <div class="filters-header">
+          <h2>Filter Properties</h2>
+          <button class="btn-reset">Reset All</button>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Rent or Sale</h3>
+          <div class="filter-options">
+            <label class="radio-option">
+              <input
+                type="radio"
+                name="transaction-type"
+                value="rent"
+                checked
+              />
+              <span class="radio-custom"></span>
+              Rent
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="transaction-type" value="sale" />
+              <span class="radio-custom"></span>
+              Sale
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Property Type</h3>
+          <select class="filter-select" id="sort-by">
+            <option value="">All Types</option>
+            <option value="apartment">Apartment</option>
+            <option value="house">House</option>
+            <option value="studio">Studio</option>
+            <option value="villa">Villa</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Location</h3>
+          <input
+            type="text"
+            class="filter-input"
+            placeholder="City or region"
+          />
+        </div>
+        <div class="filter-group" id="price-filter">
+          <h3 class="filter-title">Price Range</h3>
+          <div class="range-inputs">
+            <input
+              type="number"
+              class="range-input"
+              id="price-min"
+              placeholder="Min"
+              min="0"
+            />
+            <span class="range-separator">-</span>
+            <input
+              type="number"
+              class="range-input"
+              id="price-max"
+              placeholder="Max"
+              min="0"
+            />
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Size (m²)</h3>
+          <div class="range-inputs">
+            <input type="number" class="range-input" placeholder="Min" />
+            <span class="range-separator">-</span>
+            <input type="number" class="range-input" placeholder="Max" />
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Amenities</h3>
+          <div class="checkbox-options">
+            <label class="checkbox-option">
+              <input type="checkbox" />
+              <span class="checkbox-custom"></span>
+              Balcony
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" />
+              <span class="checkbox-custom"></span>
+              Garden
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" />
+              <span class="checkbox-custom"></span>
+              Garage
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" />
+              <span class="checkbox-custom"></span>
+              Pool
+            </label>
+            <label class="checkbox-option">
+              <input type="checkbox" />
+              <span class="checkbox-custom"></span>
+              Elevator
+            </label>
+          </div>
+        </div>
+
+        <div class="filter-group">
+          <h3 class="filter-title">Sort By</h3>
+          <select class="filter-select">
+            <option value="newest">Newest First</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="popular">Most Popular</option>
+          </select>
+        </div>
+
+        <button class="btn-apply-filters">Apply Filters</button>
+      </aside>
+
+      <!-- Property Listings -->
+      <section class="property-listings">
+        <div class="listings-header">
+          <h2>Available Properties</h2>
+          <div class="results-count">
+            Showing <span>10</span> of <span>24</span> properties
+          </div>
+        </div>
+
+        <div class="properties-grid" id="properties-grid">
+          <!-- Property cards will be inserted here by JavaScript -->
+        </div>
+
+        <div class="load-more-container">
+          <button class="btn-load-more" id="load-more-btn">
+            Show More <i class="fas fa-chevron-down"></i>
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer-container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="./home.html">
+            <img
+              src="/assets/logo-white-DHOzCjN6.png"
+              alt="Logo"
+              class="footer-logo-img"
+            />
+          </a>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>Explore</h4>
+            <div class="footer-links">
+              <a href="./categories.html">Buy a Property</a>
+              <a href="./categories.html">Rent a Property</a>
+              <a href="./categories.html">Property Categories</a>
+              <a href="#">Neighborhood Guide</a>
+              <a href="./categories.html">Gallery</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Services</h4>
+            <div class="footer-links">
+              <a href="#">Real Estate Consulting</a>
+              <a href="#">Property Management</a>
+              <a href="#">Sell Your Home</a>
+              <a href="#">Investment Opportunities</a>
+              <a href="#">Mobile App</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Blog</h4>
+            <h4>Resources</h4>
+            <div class="footer-links">
+              <a href="#">Market Insights</a>
+              <a href="#">FAQs</a>
+            </div>
+            <h4>Insights & News</h4>
+            <div class="footer-links">
+              <a href="#">Expert Insights</a>
+              <a href="#">Latest Updates</a>
+              <a href="./contact.html">Stay Informed</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>About Ares</h4>
+            <div class="footer-links">
+              <a href="#">About Us</a>
+              <a href="#">Our Team</a>
+              <a href="./contact.html">Get in Touch</a>
+            </div>
+            <div class="footer-links">
+              <a href="#">Investor Login</a>
+              <a href="#">Investor Relations</a>
+            </div>
+            <div class="footer-icons">
+              <span class="icon-x">X</span>
+              <span class="icon-in">in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          <p class="copy-right">
+            © 2025 Ares Management. All Rights Reserved.
+          </p>
+        </div>
+        <div class="footer-links footer-policy">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy & Security</a>
+          <a href="#">CCPA Compliance</a>
+          <a href="#">Online Security</a>
+          <a href="#">Coverage Transparency</a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,407 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real Estate Website</title>
+    <link rel="stylesheet" href="../../dist/css/style.css" />
+    <script type="module" crossorigin src="/assets/main-n8VnQr5d.js"></script>
+  </head>
+  <body class="container">
+    <header class="header">
+      <div class="header-content">
+        <div class="header-container">
+          <a href="./home.html">
+            <img class="rectangle-1" src="/images/logo.png" alt="Logo" />
+          </a>
+        </div>
+
+        <nav class="desktop-nav">
+          <ul class="nav-list">
+            <li><a href="#about-us" class="nav-item">About Us</a></li>
+            <li><a href="#properties" class="nav-item">Properties</a></li>
+            <li><a href="./categories.html" class="nav-item">Categories</a></li>
+            <li><a href="#services" class="nav-item">Services</a></li>
+            <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
+          </ul>
+        </nav>
+
+        <div class="desktop-cta cta-buttons">
+          <button class="secondary-btn">Log In</button>
+          <a href="./categories.html">
+            <button class="primary-btn">Get Started</button>
+          </a>
+        </div>
+
+        <!-- Burger btn -->
+        <button class="burger-btn" id="burgerBtn">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
+    </header>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <button class="close-btn" id="closeMenuBtn">×</button>
+
+      <ul class="nav-list">
+        <li><a href="#about-us" class="nav-item">About Us</a></li>
+        <li><a href="#properties" class="nav-item">Properties</a></li>
+        <li><a href="./categories.html" class="nav-item">Categories</a></li>
+        <li><a href="#services" class="nav-item">Services</a></li>
+        <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
+      </ul>
+
+      <div class="cta-buttons">
+        <button class="secondary-btn">Log In</button>
+        <button class="primary-btn">Get Started</button>
+      </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <div class="mobile-menu" id="mobileMenu">
+      <ul class="nav-list">
+        <li><a href="#about-us" class="nav-item">About Us</a></li>
+        <li><a href="#properties" class="nav-item">Properties</a></li>
+        <li>
+          <a href="./categories.html" class="nav-item">Categories</a>
+        </li>
+        <li><a href="#services" class="nav-item">Services</a></li>
+        <li><a href="./contact.html" class="nav-item">Contact Us</a></li>
+      </ul>
+
+      <div class="cta-buttons">
+        <button class="secondary-btn">Log In</button>
+        <button class="primary-btn">Get Started</button>
+      </div>
+    </div>
+
+    <div class="menu-overlay" id="menuOverlay"></div>
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-section-img">
+        <div class="hero-section-items">
+          <h1 class="hero-section-topic">
+            Find Your Perfect Dream Home Today!
+          </h1>
+          <p class="under-topic">
+            Explore the best properties for rent and sale in your area. Fast,
+            reliable, and secure.
+          </p>
+          <button class="primary-btn bigger-primary-btn">Search Now</button>
+        </div>
+      </div>
+    </section>
+    <!-- ABOUT US -->
+    <section class="about-container">
+      <h2 class="topic-about">About Us</h2>
+      <div class="about-content">
+        <div class="about-text">
+          <h3 class="about-under-topic">
+            Building Foundations Creating Futures
+          </h3>
+          <p class="about-p">
+            We build more than just houses—we create strong foundations for your
+            future. With reliability, quality, and comfort at our core, we use
+            modern innovations.
+          </p>
+          <p class="about-p">
+            Our team is committed to offering the highest standard of service,
+            ensuring every step of the process is as seamless as possible.
+            Whether you are looking for a new home or an investment opportunity,
+            we're here to guide you.
+          </p>
+          <button class="bigger-primary-btn primary-btn">Learn More</button>
+        </div>
+        <div class="benefits-building">
+          <div class="image-carousel">
+            <img
+              src="/images/house-carusel-1.jpg"
+              alt="House 1"
+              class="carousel-image active"
+            />
+            <img
+              src="/images/house-carusel-2.jpg"
+              alt="House 2"
+              class="carousel-image"
+            />
+            <img
+              src="/images/house-carusel-3.jpg"
+              alt="House 3"
+              class="carousel-image"
+            />
+            <img
+              src="/images/house-carusel-4.jpg"
+              alt="House 4"
+              class="carousel-image"
+            />
+            <button class="carousel-arrow prev">‹</button>
+            <button class="carousel-arrow next">›</button>
+            <div class="carousel-dots"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUR BENEFITS -->
+    <section class="our-benefits">
+      <h3 class="topic-l">Why Choose Our Platform</h3>
+      <div class="benefit-cards">
+        <article class="benefit-card">
+          <p class="card-number">01</p>
+          <img class="card-icon" src="/images/office-icon.png" alt="office" />
+          <h4 class="benefit-card-topic">Expert Team</h4>
+          <p class="benefit-card-text">
+            Our experienced agents provide personalized support to help you make
+            informed property decisions.We design strategies your financial
+            objectives.
+          </p>
+        </article>
+        <article class="benefit-card">
+          <p class="card-number">02</p>
+
+          <img
+            class="card-icon"
+            src="/images/compass-icon.png"
+            alt="compass-icon"
+          />
+          <h4 class="benefit-card-topic">Fully Transparent Deals</h4>
+          <p class="benefit-card-text">
+            No hidden costs, no surprises. We walk you through every step of the
+            process with clear communication and full transparency, so you feel
+            confident and in control.
+          </p>
+        </article>
+        <article class="benefit-card">
+          <p class="card-number">03</p>
+          <img
+            class="card-icon graph"
+            src="/images/graph-icon.png"
+            alt="graph-icon"
+          />
+          <h4 class="benefit-card-topic">Truly Client-Focused</h4>
+          <p class="benefit-card-text">
+            Your needs come first — always. We take time to understand your
+            goals and tailor our support, ensuring your buying or renting
+            experience is smooth, fast, and rewarding.
+          </p>
+        </article>
+        <article class="benefit-card">
+          <p class="card-number">04</p>
+          <img class="card-icon" src="/images/shield-icon.png" alt="shield" />
+          <h4 class="benefit-card-topic">Experienced & Trusted Agents</h4>
+          <p class="benefit-card-text">
+            Our team combines years of experience with a modern approach. You
+            get professional advice, negotiation support.
+          </p>
+        </article>
+      </div>
+    </section>
+    <!-- Categories -->
+    <section class="categories-container">
+      <h2 class="categories-topic">Explore Property Types</h2>
+      <div class="categories-grid">
+        <div class="image-wrapper">
+          <img
+            class="categories-image"
+            src="/images/1-rentsell.png"
+            alt="image-for-sale"
+          />
+          <p class="categories-status-right">Rent</p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="categories-image"
+            src="/images/2-rentsell.png"
+            alt="image-for-sale"
+          />
+          <p class="categories-status-left">Rent</p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="categories-image"
+            src="/images/3-rentsell.png"
+            alt="image-for-sale"
+          />
+          <p class="categories-status-right">Rent</p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="categories-image"
+            src="/images/4-rentsell.png"
+            alt="image-for-sale"
+          />
+          <p class="categories-status-right">Rent</p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="categories-image"
+            src="/images/5-rentsell.png"
+            alt="image-for-sale"
+          />
+          <p class="categories-status-left">Rent</p>
+        </div>
+        <div class="image-wrapper">
+          <img
+            class="categories-image"
+            src="/images/6-rentsell.png"
+            alt="image-for-sale"
+          />
+          <p class="categories-status-left">Rent</p>
+        </div>
+      </div>
+      <a href="./categories.html">
+        <button class="bigger-primary-btn primary-btn types-button">
+          Browse All Listings
+        </button>
+      </a>
+    </section>
+    <!-- STATS -->
+    <section class="stats-container">
+      <div class="towers-stats-container">
+        <div>
+          <img
+            class="towers-stats"
+            src="/images/towers-stats.png"
+            alt="towers"
+          />
+          <h2 class="stats-topic">Your Trusted Investment Partner</h2>
+          <div class="stats-content">
+            <div>
+              <h3 class="topic-l stats-num first-stat">12,000+</h3>
+              <p class="stats-text">Properties Listed</p>
+            </div>
+            <hr />
+            <div>
+              <h3 class="topic-l stats-num">8,500+</h3>
+              <p class="stats-text">Happy Clients</p>
+            </div>
+            <hr />
+            <div>
+              <h3 class="topic-l stats-num">250+</h3>
+              <p class="stats-text">Verified Agents</p>
+            </div>
+            <hr />
+            <div>
+              <h3 class="topic-l stats-num">98%</h3>
+              <p class="stats-text">Client satisfaction rate</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact Us -->
+    <section class="cta-container">
+      <div class="cta-image">
+        <h2 class="cta-topic">Ready to Make Your Move?</h2>
+        <p class="cta-text">
+          Join thousands of satisfied clients and find your dream property
+          today. Whether you're buying or renting, we've got you covered.
+        </p>
+        <div class="cta-buttons-ct">
+          <a href="./contact.html">
+            <button class="bigger-secondary-btn secondary-btn">
+              Contact Us
+            </button> </a
+          ><a href="./categories.html">
+            <button class="bigger-primary-btn primary-btn">Get Started</button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="footer-container">
+      <div class="footer-inner">
+        <div class="footer-logo">
+          <a href="./home.html">
+            <img
+              src="/images/logo-white.png"
+              alt="Logo"
+              class="footer-logo-img"
+            />
+          </a>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-column">
+            <h4>Explore</h4>
+            <div class="footer-links">
+              <a href="./categories.html">Buy a Property</a>
+              <a href="./categories.html">Rent a Property</a>
+              <a href="./categories.html">Property Categories</a>
+              <a href="#">Neighborhood Guide</a>
+              <a href="./categories.html">Gallery</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Services</h4>
+            <div class="footer-links">
+              <a href="#">Real Estate Consulting</a>
+              <a href="#">Property Management</a>
+              <a href="#">Sell Your Home</a>
+              <a href="#">Investment Opportunities</a>
+              <a href="#">Mobile App</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>Blog</h4>
+            <h4>Resources</h4>
+            <div class="footer-links">
+              <a href="#">Market Insights</a>
+              <a href="#">FAQs</a>
+            </div>
+            <h4>Insights & News</h4>
+            <div class="footer-links">
+              <a href="#">Expert Insights</a>
+              <a href="#">Latest Updates</a>
+              <a href="./contact.html">Stay Informed</a>
+            </div>
+          </div>
+          <div class="footer-column">
+            <h4>About Ares</h4>
+            <div class="footer-links">
+              <a href="#">About Us</a>
+              <a href="#">Our Team</a>
+              <a href="./contact.html">Get in Touch</a>
+            </div>
+            <div class="footer-links">
+              <a href="#">Investor Login</a>
+              <a href="#">Investor Relations</a>
+            </div>
+            <div class="footer-icons">
+              <span class="icon-x">X</span>
+              <span class="icon-in">in</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>
+          <p class="copy-right">
+            © 2025 Ares Management. All Rights Reserved.
+          </p>
+        </div>
+        <div class="footer-links footer-policy">
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Privacy & Security</a>
+          <a href="#">CCPA Compliance</a>
+          <a href="#">Online Security</a>
+          <a href="#">Coverage Transparency</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
