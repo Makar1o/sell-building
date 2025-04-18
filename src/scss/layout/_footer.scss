@@ -106,13 +106,12 @@
   display: block;
   margin-bottom: 8px;
   font-size: 14px;
-
   color: $white-color;
+  text-decoration: none;
   @media (width >= 768px) {
     margin-bottom: 12px;
     font-size: 15px;
   }
-  text-decoration: none;
   transition: opacity 0.2s ease;
 
   &:hover {

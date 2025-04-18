@@ -1,6 +1,6 @@
 @use "../utils/variables" as *;
 @use "../buttons" as *;
-
+@use "sass:color";
 @mixin card-effect {
   transition: all 0.3s ease;
 
@@ -27,7 +27,7 @@
   background: linear-gradient(
     135deg,
     $secondary-color 0%,
-    scale-color($secondary-color, $lightness: 5%)
+    color.scale($secondary-color, $lightness: 5%)
   );
   padding: 2.5rem;
   border-radius: 24px;
