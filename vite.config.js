@@ -9,6 +9,8 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: resolve(__dirname, "src/html/home.html"),
+        categories: resolve(__dirname, "src/html/categories.html"),
+        contact: resolve(__dirname, "src/html/contact.html"),
       },
     },
   },
