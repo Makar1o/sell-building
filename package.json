@@ -1,25 +1,21 @@
 {
   "name": "capstone-mykytyn",
   "version": "1.0.0",
-  "main": "compile-sass.js",
   "type": "module",
   "scripts": {
-    "compile-sass": "sass src/scss:dist/css --no-source-map",
-    "compile:sass": "npm run compile-sass",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
-    "lint:css": "stylelint \"**/*.{css,scss}\"",
-    "build": "npm run compile-sass && vite build",
-    "dev": "vite serve"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "compile:sass": "sass src/scss:dist/css --no-source-map",
+    "lint": "eslint . && stylelint \"**/*.{css,scss}\"",
+    "lint:fix": "eslint . --fix && stylelint \"**/*.{css,scss}\" --fix",
+    "prepare": "husky install"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "eslint": "^9.24.0",
     "eslint-config-prettier": "^10.1.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^15.2.2",
     "prettier": "^3.5.3",
     "sass": "^1.86.3",
     "stylelint": "^16.17.0",
@@ -30,5 +26,10 @@
   },
   "dependencies": {
     "leaflet": "^1.9.4"
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "eslint --fix",
+    "**/*.{css,scss}": "stylelint --fix",
+    "**/*.{js,jsx,ts,tsx,css,scss,html,json,md}": "prettier --write"
   }
 }
