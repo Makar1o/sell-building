@@ -1,5 +1,7 @@
 @use "../utils/variables" as *;
 @use "../buttons" as *;
+@use "sass:color";
+@use "sass:math";
 
 .header {
   height: 80px;
@@ -76,7 +78,7 @@
   transition: color 0.3s ease;
 
   &:hover {
-    color: darken($primary-color, 10%);
+    color: scale-color($primary-color, $lightness: -10%);
   }
 }
 

@@ -27,7 +27,7 @@
   background: linear-gradient(
     135deg,
     $secondary-color 0%,
-    lighten($secondary-color, 5%) 100%
+    scale-color($secondary-color, $lightness: 5%)
   );
   padding: 2.5rem;
   border-radius: 24px;

@@ -139,7 +139,7 @@
   transition: color 0.3s ease;
 }
 .nav-item:hover {
-  color: rgb(0.2272727273, 9.5454545455, 14.7727272727);
+  color: rgb(0.9, 37.8, 58.5);
 }
 
 .cta-buttons {
@@ -1389,7 +1389,7 @@
 }
 .breadcrumbs a:hover {
   text-decoration: underline;
-  color: rgb(3.3181818182, 139.3636363636, 215.6818181818);
+  color: rgb(3.0181818182, 126.7636363636, 196.1818181818);
 }
 .breadcrumbs span {
   font-weight: 700;
@@ -1760,7 +1760,7 @@
 }
 
 .contact-info {
-  background: linear-gradient(135deg, #f7f8fa 0%, white 100%);
+  background: linear-gradient(135deg, #f7f8fa 0%, rgb(247.4, 248.35, 250.25));
   padding: 2.5rem;
   border-radius: 24px;
   transition: all 0.3s ease;

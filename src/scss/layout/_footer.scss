@@ -107,12 +107,11 @@
   margin-bottom: 8px;
   font-size: 14px;
 
+  color: $white-color;
   @media (width >= 768px) {
     margin-bottom: 12px;
     font-size: 15px;
   }
-
-  color: $white-color;
   text-decoration: none;
   transition: opacity 0.2s ease;
 
